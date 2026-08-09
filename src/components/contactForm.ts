@@ -93,8 +93,8 @@ ${message}`;
 
       const whatsappNumber = '971554276817';
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(messageBody)}`;
-      const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=jan.adeeb000@gmail.com&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(messageBody)}`;
-      const mailtoUrl = `mailto:jan.adeeb000@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(messageBody)}`;
+      const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=joudi.adeeb@gmail.com&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(messageBody)}`;
+      const mailtoUrl = `mailto:joudi.adeeb@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(messageBody)}`;
 
       if (formStatus) {
         formStatus.className = 'form-status success';

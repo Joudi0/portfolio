@@ -37,7 +37,7 @@ function createToastContainer(): HTMLElement {
 }
 
 export function copyEmail(): void {
-  const email = 'jan.adeeb000@gmail.com';
+  const email = 'joudi.adeeb@gmail.com';
   navigator.clipboard.writeText(email).then(() => {
     showToast('Email copied to clipboard: ' + email);
   }).catch(() => {
