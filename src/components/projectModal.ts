@@ -8,6 +8,9 @@ export function openProjectModal(projectId: string): void {
   const backdrop = document.getElementById('project-modal');
   const windowEl = document.getElementById('modal-window');
   if (!backdrop || !windowEl) return;
+
+  const liveLabel = project.liveUrlLabel ?? 'Live Demo ↗';
+  const repoLabel = project.repoUrlLabel ?? 'GitHub Repo ↗';
   
   windowEl.innerHTML = `
     <button class="modal-close" id="modal-close-btn" aria-label="Close modal">
@@ -21,9 +24,16 @@ export function openProjectModal(projectId: string): void {
       ${project.isPrivate ? '<span class="badge" style="margin-left: 0.5rem; background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3);">Proprietary / Closed Source</span>' : ''}
     </div>
     <h3 style="font-size: 1.5rem; margin-bottom: 0.25rem;">${escapeHtml(project.title)}</h3>
-    <p style="color: var(--accent-emerald); font-family: var(--font-mono); font-size: 0.875rem; margin-bottom: 1.25rem;">
+    <p style="color: var(--accent-emerald); font-family: var(--font-mono); font-size: 0.875rem; margin-bottom: 0.5rem;">
       ${escapeHtml(project.subtitle)}
     </p>
+    ${project.role || project.published ? `
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+        ${project.role ? `<strong style="color: var(--text-primary);">Role:</strong> ${escapeHtml(project.role)}` : ''}
+        ${project.role && project.published ? ' · ' : ''}
+        ${project.published ? `<strong style="color: var(--text-primary);">Published:</strong> ${escapeHtml(project.published)}` : ''}
+      </p>
+    ` : '<div style="margin-bottom: 1.25rem;"></div>'}
     
     <div style="margin-bottom: 1.25rem;">
       <h4 style="font-size: 1rem; color: var(--text-primary); margin-bottom: 0.5rem;">System Architecture &amp; Design Pattern</h4>
@@ -79,6 +89,28 @@ export function openProjectModal(projectId: string): void {
         ${project.highlights.map(h => `<li style="margin-bottom: 0.4rem;">${escapeHtml(h)}</li>`).join('')}
       </ul>
     </div>
+
+    ${project.skills && project.skills.length > 0 ? `
+      <div style="margin-bottom: 1.25rem;">
+        <h4 style="font-size: 1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Skills</h4>
+        <div class="badge-group">
+          ${project.skills.map(skill => `<span class="badge">${escapeHtml(skill)}</span>`).join('')}
+        </div>
+      </div>
+    ` : ''}
+
+    ${project.moreBy && project.moreBy.length > 0 ? `
+      <div style="margin-bottom: 1.25rem;">
+        <h4 style="font-size: 1rem; color: var(--text-primary); margin-bottom: 0.5rem;">More by Joudi Adeeb</h4>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+          ${project.moreBy.map(related => `
+            <button type="button" class="btn btn-outline btn-sm" data-related-project-id="${escapeHtml(related.id)}">
+              <span>${escapeHtml(related.title)}</span>
+            </button>
+          `).join('')}
+        </div>
+      </div>
+    ` : ''}
     
     <div style="background-color: var(--accent-emerald-glow); border: 1px solid var(--accent-emerald-border); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
       <strong style="color: var(--accent-emerald); font-size: 0.875rem; display: block; margin-bottom: 0.25rem;">🛡️ Security Audit Guarantee:</strong>
@@ -86,8 +118,8 @@ export function openProjectModal(projectId: string): void {
     </div>
     
     <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-      ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live Scalar API Docs ↗</a>` : ''}
-      ${project.repoUrl ? `<a href="${project.repoUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Backend GitHub Repo ↗</a>` : ''}
+      ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">${escapeHtml(liveLabel)}</a>` : ''}
+      ${project.repoUrl ? `<a href="${project.repoUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">${escapeHtml(repoLabel)}</a>` : ''}
       ${project.desktopRepoUrl ? `<a href="${project.desktopRepoUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Desktop WinForms Repo ↗</a>` : ''}
       ${project.upworkUrl ? `<a href="${project.upworkUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="border-color: #14a800; color: #14a800;">Upwork Project Case Study ↗</a>` : ''}
       ${project.desktopUpworkUrl ? `<a href="${project.desktopUpworkUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="border-color: #14a800; color: #14a800;">Desktop Upwork Case Study ↗</a>` : ''}
@@ -102,5 +134,12 @@ export function openProjectModal(projectId: string): void {
   });
   document.getElementById('modal-close-window-btn')?.addEventListener('click', () => {
     backdrop.classList.remove('active');
+  });
+
+  windowEl.querySelectorAll<HTMLButtonElement>('button[data-related-project-id]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const relatedId = btn.getAttribute('data-related-project-id');
+      if (relatedId) openProjectModal(relatedId);
+    });
   });
 }

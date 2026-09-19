@@ -5,8 +5,14 @@ export interface ProjectDetails {
   codeSnippet: string;
   highlights: string[];
   securityNote: string;
+  role?: string;
+  skills?: string[];
+  published?: string;
+  moreBy?: { id: string; title: string }[];
   liveUrl?: string;
+  liveUrlLabel?: string;
   repoUrl?: string;
+  repoUrlLabel?: string;
   desktopRepoUrl?: string;
   upworkUrl?: string;
   desktopUpworkUrl?: string;
