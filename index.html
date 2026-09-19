@@ -48,6 +48,7 @@
         "@type": "Person",
         "name": "Joudi Mohammad",
         "jobTitle": "Backend & Database Engineer | Application Security Specialist",
+        "image": "https://joudi-portfolio.dev/images/official-portrait.png",
         "worksFor": {
           "@type": "Organization",
           "name": "Independent Consultant / IT Legend"
@@ -302,7 +303,14 @@
             role="button"
             tabindex="0"
           >
-            <div class="profile-avatar">JM</div>
+            <div class="profile-avatar" aria-hidden="true">
+              <img
+                src="/images/official-portrait.png"
+                alt=""
+                width="32"
+                height="32"
+              />
+            </div>
             <div class="profile-info">
               <span class="profile-name">Joudi Adeeb</span>
               <span class="profile-role">Golden Visa UAE</span>
@@ -367,7 +375,14 @@
           <!-- Card 1: Profile & Bio -->
           <a href="#about" class="gumroad-card gamified-card">
             <div class="card-gamified-tag">[MOD-01] &bull; OVERVIEW</div>
-            <div class="gumroad-card-icon">👤</div>
+            <div class="gumroad-card-icon gumroad-card-icon--portrait">
+              <img
+                src="/images/official-portrait.png"
+                alt=""
+                width="48"
+                height="48"
+              />
+            </div>
             <h3 class="gumroad-card-title">Profile &amp; About</h3>
             <p class="gumroad-card-desc">
               Abu Dhabi Engineer &bull; Golden Visa
@@ -445,20 +460,29 @@
 
         <!-- HERO SECTION -->
         <section id="hero" class="hero-section" aria-labelledby="hero-title">
-          <div class="section-header">
-            <span class="section-subtitle">OVERVIEW &bull; ABU DHABI, UAE</span>
-            <h1 id="hero-title">Joudi Mohammad</h1>
-            <p
-              style="
-                font-size: 1.15rem;
-                color: var(--accent-pink);
-                font-weight: 600;
-                margin-top: 0.25rem;
-              "
-            >
-              Backend &amp; Database Engineer &bull; Application Security
-              Specialist
-            </p>
+          <div class="hero-identity">
+            <img
+              class="hero-portrait"
+              src="/images/official-portrait.png"
+              alt="Official portrait of Joudi Adeeb"
+              width="112"
+              height="112"
+            />
+            <div class="section-header" style="margin-bottom: 0">
+              <span class="section-subtitle">OVERVIEW &bull; ABU DHABI, UAE</span>
+              <h1 id="hero-title">Joudi Mohammad</h1>
+              <p
+                style="
+                  font-size: 1.15rem;
+                  color: var(--accent-pink);
+                  font-weight: 600;
+                  margin-top: 0.25rem;
+                "
+              >
+                Backend &amp; Database Engineer &bull; Application Security
+                Specialist
+              </p>
+            </div>
           </div>
 
           <p
@@ -513,10 +537,27 @@
           </div>
 
           <div class="grid-1-2">
-            <article class="card">
-              <h3 class="card-title" style="margin-bottom: 0.75rem">
-                Core Expertise
+            <article class="card about-portrait-card">
+              <img
+                class="about-portrait"
+                src="/images/official-portrait.png"
+                alt="Joudi Adeeb official portrait"
+                width="280"
+                height="280"
+              />
+              <h3 class="card-title" style="margin: 1rem 0 0.35rem">
+                Joudi Adeeb
               </h3>
+              <p
+                style="
+                  font-size: 0.85rem;
+                  color: var(--text-muted);
+                  font-family: var(--font-mono);
+                  margin-bottom: 0.75rem;
+                "
+              >
+                Backend &amp; Database Engineer
+              </p>
               <p style="font-size: 0.95rem">
                 With a background in Cybersecurity (Dean's List at Abu Dhabi
                 University) and hands-on penetration testing experience, I build
