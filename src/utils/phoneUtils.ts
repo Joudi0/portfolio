@@ -1,23 +1,22 @@
 export interface CountryCode {
   code: string;
   name: string;
-  flag: string;
 }
 
 export const COUNTRY_CODES: CountryCode[] = [
-  { code: '+971', name: 'UAE', flag: '🇦🇪' },
-  { code: '+966', name: 'KSA', flag: '🇸🇦' },
-  { code: '+963', name: 'Syria', flag: '🇸🇾' },
-  { code: '+962', name: 'Jordan', flag: '🇯🇴' },
-  { code: '+20', name: 'Egypt', flag: '🇪🇬' },
-  { code: '+974', name: 'Qatar', flag: '🇶🇦' },
-  { code: '+965', name: 'Kuwait', flag: '🇰🇼' },
-  { code: '+968', name: 'Oman', flag: '🇴🇲' },
-  { code: '+973', name: 'Bahrain', flag: '🇧🇭' },
-  { code: '+964', name: 'Iraq', flag: '🇮🇶' },
-  { code: '+961', name: 'Lebanon', flag: '🇱🇧' },
-  { code: '+1', name: 'USA / Canada', flag: '🇺🇸' },
-  { code: '+44', name: 'UK', flag: '🇬🇧' },
+  { code: '+971', name: 'UAE' },
+  { code: '+966', name: 'KSA' },
+  { code: '+963', name: 'Syria' },
+  { code: '+962', name: 'Jordan' },
+  { code: '+20', name: 'Egypt' },
+  { code: '+974', name: 'Qatar' },
+  { code: '+965', name: 'Kuwait' },
+  { code: '+968', name: 'Oman' },
+  { code: '+973', name: 'Bahrain' },
+  { code: '+964', name: 'Iraq' },
+  { code: '+961', name: 'Lebanon' },
+  { code: '+1', name: 'USA / Canada' },
+  { code: '+44', name: 'UK' },
 ];
 
 /**
@@ -64,7 +63,7 @@ export function formatContactValue(rawValue: string, selectedCountryCode: string
 export function validateContactInput(rawValue: string, method: string): { isValid: boolean; errorMessage: string } {
   const trimmed = rawValue.trim();
   if (!trimmed) {
-    return { isValid: false, errorMessage: '❌ Please enter your contact information.' };
+    return { isValid: false, errorMessage: 'Please enter your contact information.' };
   }
 
   if (method === 'email') {
@@ -72,21 +71,21 @@ export function validateContactInput(rawValue: string, method: string): { isVali
     if (!emailRegex.test(trimmed)) {
       return { 
         isValid: false, 
-        errorMessage: '❌ Invalid Email Address! You selected Email as your preferred method. Please enter a valid email address (e.g. name@company.com).' 
+        errorMessage: 'Invalid Email Address! You selected Email as your preferred method. Please enter a valid email address (e.g. name@company.com).' 
       };
     }
   } else if (method === 'whatsapp') {
     if (trimmed.includes('@')) {
       return {
         isValid: false,
-        errorMessage: '❌ You entered an email address, but selected WhatsApp as your preferred contact method. Please switch method to Email or enter a phone number.'
+        errorMessage: 'You entered an email address, but selected WhatsApp as your preferred contact method. Please switch method to Email or enter a phone number.'
       };
     }
     const digitsOnly = trimmed.replace(/\D/g, '');
     if (digitsOnly.length < 5) {
       return { 
         isValid: false, 
-        errorMessage: '❌ Invalid Phone Number! You selected WhatsApp as your preferred method. Please enter a valid phone number (e.g. 0554276817).' 
+        errorMessage: 'Invalid Phone Number! You selected WhatsApp as your preferred method. Please enter a valid phone number (e.g. 0554276817).' 
       };
     }
   }
@@ -100,7 +99,7 @@ export function validateContactInput(rawValue: string, method: string): { isVali
 export function renderCountryOptions(defaultCode: string = '+971'): string {
   return COUNTRY_CODES.map(c => `
     <option value="${c.code}" ${c.code === defaultCode ? 'selected' : ''}>
-      ${c.flag} ${c.code} (${c.name})
+      ${c.code} (${c.name})
     </option>
   `).join('');
 }

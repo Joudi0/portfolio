@@ -87,7 +87,7 @@ export async function testApiEndpoint(): Promise<void> {
     };
     outputEl.textContent = JSON.stringify(fallbackResponse, null, 2);
     if (enjoyMsgEl) enjoyMsgEl.style.display = 'block';
-    showToast('🔑 JWT Token Generated Successfully!');
+    showToast('JWT token generated');
   }
 }
 

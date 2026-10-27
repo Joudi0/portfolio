@@ -1,3 +1,4 @@
+import { renderIcons } from '../utils/icons';
 import { showToast } from '../utils/toast';
 import { formatContactValue, validateContactInput } from '../utils/phoneUtils';
 
@@ -62,7 +63,7 @@ export function setupContactForm(): void {
       if (!fullName || !rawContact || !message) {
         if (formStatus) {
           formStatus.className = 'form-status error';
-          formStatus.textContent = '❌ Please complete all required fields before submitting.';
+          formStatus.textContent = 'Please complete all required fields before submitting.';
         }
         return;
       }
@@ -102,24 +103,24 @@ ${message}`;
         let actionButtonsHtml = '';
         if (isPhoneMode) {
           actionButtonsHtml = `
-            <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" style="background: #25D366; color: #000000; font-weight: 700; padding: 0.75rem 1.25rem; border-radius: var(--radius-md); display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35); font-size: 0.9rem;">
-              <span>💬</span> Send via WhatsApp (${contactInfo.formatted})
+            <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-pink">
+              <i data-lucide="message-circle"></i> Send via WhatsApp (${contactInfo.formatted})
             </a>
           `;
         } else {
           actionButtonsHtml = `
-            <a href="${gmailWebUrl}" target="_blank" rel="noopener noreferrer" style="background: #EA4335; color: #FFFFFF; font-weight: 700; padding: 0.75rem 1.25rem; border-radius: var(--radius-md); display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; box-shadow: 0 4px 14px rgba(234, 67, 53, 0.35); font-size: 0.9rem;">
-              <span>✉️</span> Send via Gmail Web
+            <a href="${gmailWebUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              <i data-lucide="mail"></i> Send via Gmail Web
             </a>
-            <a href="${mailtoUrl}" style="background: rgba(255, 255, 255, 0.12); color: var(--text-primary); border: 1px solid var(--border-muted); font-weight: 600; padding: 0.75rem 1.25rem; border-radius: var(--radius-md); display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-size: 0.9rem;">
-              <span>📧</span> Default Email App
+            <a href="${mailtoUrl}" class="btn btn-outline">
+              <i data-lucide="send"></i> Default Email App
             </a>
           `;
         }
 
         formStatus.innerHTML = `
-          <div style="padding: 1rem; background: rgba(16, 185, 129, 0.12); border: 1.5px solid rgba(16, 185, 129, 0.4); border-radius: var(--radius-md); margin-top: 0.75rem;">
-            <p style="margin-bottom: 0.4rem; font-weight: 700; color: #10B981; font-size: 1rem;">✓ Message ready to dispatch!</p>
+          <div style="padding: 1rem; background: var(--accent-pink-glow); border: 1px solid var(--accent-pink-border); border-radius: var(--radius-md); margin-top: 0.75rem;">
+            <p style="margin-bottom: 0.4rem; font-weight: 700; color: var(--text-primary); font-size: 1rem;">✓ Message ready to dispatch!</p>
             <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.85rem; line-height: 1.4;">
               ${isPhoneMode ? 'Click below to launch WhatsApp and send your message:' : 'Click below to dispatch your message via Email:'}
             </p>
@@ -128,6 +129,7 @@ ${message}`;
             </div>
           </div>
         `;
+        renderIcons(formStatus);
       }
 
       showToast(`Message prepared for ${isPhoneMode ? 'WhatsApp' : 'Email'} delivery!`);

@@ -1,3 +1,4 @@
+import { renderIcons } from '../utils/icons';
 import { showToast, escapeHtml } from '../utils/toast';
 import { formatContactValue, renderCountryOptions, validateContactInput } from '../utils/phoneUtils';
 
@@ -54,26 +55,26 @@ export function openServiceModal(serviceId: string): void {
       </span>
     </div>
     <h3 style="font-size: 1.5rem; margin-bottom: 0.25rem;">Request Service: ${escapeHtml(service.title)}</h3>
-    <p style="color: var(--accent-emerald); font-family: var(--font-mono); font-size: 0.875rem; margin-bottom: 1.25rem;">
+    <p style="color: var(--accent-pink); font-family: var(--font-mono); font-size: 0.875rem; margin-bottom: 1.25rem;">
       ${escapeHtml(service.subtitle)}
     </p>
 
     <form id="service-request-form" style="display: flex; flex-direction: column; gap: 1rem;">
       <div class="form-group">
-        <label for="service-client-name">Your Name <span style="color: var(--accent-emerald);">*</span></label>
+        <label for="service-client-name">Your Name <span style="color: var(--accent-pink);">*</span></label>
         <input type="text" id="service-client-name" placeholder="e.g. Ahmad Al-Mansoori" required />
       </div>
 
       <div class="form-group">
-        <label for="service-contact-method">Preferred Contact Method <span style="color: var(--accent-emerald);">*</span></label>
+        <label for="service-contact-method">Preferred Contact Method <span style="color: var(--accent-pink);">*</span></label>
         <select id="service-contact-method" style="margin-bottom: 0.5rem;">
-          <option value="whatsapp" selected>💬 WhatsApp / Mobile Phone</option>
-          <option value="email">✉️ Email Address</option>
+          <option value="whatsapp" selected>WhatsApp / Mobile phone</option>
+          <option value="email">Email address</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label id="service-contact-label" for="service-contact-info">Phone Number / WhatsApp <span style="color: var(--accent-emerald);">*</span></label>
+        <label id="service-contact-label" for="service-contact-info">Phone Number / WhatsApp <span style="color: var(--accent-pink);">*</span></label>
         <div style="display: flex; gap: 0.5rem; align-items: center;">
           <select id="service-country-code" style="background: var(--bg-main); border: 1px solid var(--border-muted); color: var(--text-primary); padding: 0.65rem 0.5rem; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.85rem; width: 135px;" aria-label="Country Dialing Code">
             ${renderCountryOptions('+971')}
@@ -100,7 +101,7 @@ export function openServiceModal(serviceId: string): void {
 
       <div style="display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 0.5rem;">
         <button type="button" class="btn btn-secondary btn-sm" id="service-cancel-btn">Cancel</button>
-        <button type="submit" class="btn btn-emerald btn-sm" style="font-weight: 700;">
+        <button type="submit" class="btn btn-pink btn-sm" style="font-weight: 700;">
           <span>Submit Service Request</span>
           <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="22" y1="2" x2="11" y2="13"></line>
@@ -111,6 +112,7 @@ export function openServiceModal(serviceId: string): void {
     </form>
   `;
 
+  renderIcons(windowEl);
   backdrop.classList.add('active');
 
   const closeBtn = document.getElementById('modal-close-btn');
@@ -144,8 +146,8 @@ export function openServiceModal(serviceId: string): void {
       }
       if (labelEl) {
         labelEl.innerHTML = isWhatsapp 
-          ? 'Phone Number / WhatsApp <span style="color: var(--accent-emerald);">*</span>'
-          : 'Email Address <span style="color: var(--accent-emerald);">*</span>';
+          ? 'Phone Number / WhatsApp <span style="color: var(--accent-pink);">*</span>'
+          : 'Email Address <span style="color: var(--accent-pink);">*</span>';
       }
     });
   }
@@ -167,7 +169,7 @@ export function openServiceModal(serviceId: string): void {
       if (!name || !rawContact) {
         if (statusEl) {
           statusEl.className = 'form-status error';
-          statusEl.textContent = '❌ Please enter your name and contact info.';
+          statusEl.textContent = 'Please enter your name and contact info.';
         }
         return;
       }
@@ -187,7 +189,7 @@ export function openServiceModal(serviceId: string): void {
 
       if (statusEl) {
         statusEl.className = 'form-status success';
-        statusEl.textContent = '⏳ Preparing service request dispatch...';
+        statusEl.textContent = 'Preparing service request dispatch...';
       }
 
       const emailSubject = `Service Request: ${selectedService.title} - ${name}`;
@@ -210,17 +212,17 @@ ${details || 'No additional details provided.'}`;
       let actionButtonsHtml = '';
       if (isPhoneMode) {
         actionButtonsHtml = `
-          <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" style="background: #25D366; color: #000000; font-weight: 700; padding: 0.75rem 1.25rem; border-radius: var(--radius-md); display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35); font-size: 0.9rem;">
-            <span>💬</span> Send via WhatsApp (${contactInfo.formatted})
+          <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-pink">
+            <i data-lucide="message-circle"></i> Send via WhatsApp (${contactInfo.formatted})
           </a>
         `;
       } else {
         actionButtonsHtml = `
-          <a href="${gmailWebUrl}" target="_blank" rel="noopener noreferrer" style="background: #EA4335; color: #FFFFFF; font-weight: 700; padding: 0.75rem 1.25rem; border-radius: var(--radius-md); display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; box-shadow: 0 4px 14px rgba(234, 67, 53, 0.35); font-size: 0.9rem;">
-            <span>✉️</span> Send via Gmail Web
+          <a href="${gmailWebUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            <i data-lucide="mail"></i> Send via Gmail Web
           </a>
-          <a href="${mailtoUrl}" style="background: rgba(255, 255, 255, 0.12); color: var(--text-primary); border: 1px solid var(--border-muted); font-weight: 600; padding: 0.75rem 1.25rem; border-radius: var(--radius-md); display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-size: 0.9rem;">
-            <span>📧</span> Default Email App
+          <a href="${mailtoUrl}" class="btn btn-outline">
+            <i data-lucide="send"></i> Default Email App
           </a>
         `;
       }
@@ -229,8 +231,8 @@ ${details || 'No additional details provided.'}`;
       if (statusEl) {
         statusEl.className = 'form-status success';
         statusEl.innerHTML = `
-          <div style="padding: 1rem; background: rgba(16, 185, 129, 0.12); border: 1.5px solid rgba(16, 185, 129, 0.4); border-radius: var(--radius-md); text-align: left; margin-top: 0.5rem;">
-            <p style="margin-bottom: 0.4rem; font-weight: 700; color: #10B981; font-size: 1rem;">✓ Service request created!</p>
+          <div style="padding: 1rem; background: var(--accent-pink-glow); border: 1px solid var(--accent-pink-border); border-radius: var(--radius-md); text-align: left; margin-top: 0.5rem;">
+            <p style="margin-bottom: 0.4rem; font-weight: 700; color: var(--text-primary); font-size: 1rem;">✓ Service request created!</p>
             <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.85rem; line-height: 1.4;">
               ${isPhoneMode ? 'Click below to launch WhatsApp and send your request:' : 'Click below to dispatch your request via Email:'}
             </p>
@@ -239,6 +241,7 @@ ${details || 'No additional details provided.'}`;
             </div>
           </div>
         `;
+        renderIcons(statusEl);
       }
     });
   }

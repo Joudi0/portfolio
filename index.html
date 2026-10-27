@@ -5,41 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary SEO Meta Tags -->
-    <title>
-      Joudi Mohammad — Backend & Database Engineer | Application Security
-      Specialist
-    </title>
-    <meta
-      name="title"
-      content="Joudi Mohammad — Backend & Database Engineer | Application Security Specialist"
-    />
+    <title>Joudi Mohammad — Software &amp; Security Architect | Creator of ReshkoEngine</title>
     <meta
       name="description"
-      content="Official portfolio of Joudi Mohammad, Backend & Database Engineer and Application Security Specialist based in Abu Dhabi, UAE. Golden Visa Holder specializing in C# .NET 10, T-SQL, ADO.NET, and API Penetration Testing."
+      content="Joudi Mohammad builds secure, high-performance .NET 10 backends and SaaS platforms for businesses, and audits APIs the way an attacker would. Creator of ReshkoEngine. UAE Golden Visa holder based in Abu Dhabi."
     />
     <meta
       name="keywords"
-      content="Joudi Mohammad, Backend Engineer, Database Engineer, Application Security Specialist, Penetration Tester, C#, .NET 10, ASP.NET Core, T-SQL, ADO.NET, Abu Dhabi, Golden Visa, OWASP, IDOR Mitigation"
+      content="Joudi Mohammad, Software Architect, Security Architect, ReshkoEngine, Backend Engineer, Application Security, Penetration Testing, C#, .NET 10, ASP.NET Core, T-SQL, Abu Dhabi, UAE, Golden Visa, OWASP"
     />
     <meta name="author" content="Joudi Mohammad" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#0e0e10" />
+    <meta name="theme-color" content="#0c0c0e" />
+    <link rel="canonical" href="https://joudi.dev/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/images/official-portrait.png" />
 
-    <!-- Open Graph / LinkedIn Meta Tags -->
+    <!-- Open Graph / LinkedIn -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://joudi-portfolio.dev" />
+    <meta property="og:site_name" content="joudi.dev" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://joudi.dev/" />
     <meta
       property="og:title"
-      content="Joudi Mohammad — Backend & Database Engineer | Security Specialist"
+      content="Joudi Mohammad — Software &amp; Security Architect"
     />
     <meta
       property="og:description"
-      content="Ultra-clean Gumroad dark dashboard portfolio showcasing C# .NET 10 architectures, 121 Stored Procedures engines, and OWASP API Security Audits."
+      content="Secure, high-performance .NET 10 backends and SaaS platforms — built fast with ReshkoEngine and tested like an attacker would. Try the live API on the site."
+    />
+    <meta property="og:image" content="https://joudi.dev/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Joudi Mohammad — Software &amp; Security Architect, joudi.dev"
+    />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Joudi Mohammad — Software &amp; Security Architect"
     />
     <meta
-      property="og:image"
-      content="https://joudi-portfolio.dev/og-cover.png"
+      name="twitter:description"
+      content="Secure, high-performance .NET 10 backends and SaaS platforms. Creator of ReshkoEngine."
     />
+    <meta name="twitter:image" content="https://joudi.dev/og-cover.png" />
 
     <!-- Structured JSON-LD Data -->
     <script type="application/ld+json">
@@ -47,8 +60,9 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Joudi Mohammad",
-        "jobTitle": "Backend & Database Engineer | Application Security Specialist",
-        "image": "https://joudi-portfolio.dev/images/official-portrait.png",
+        "url": "https://joudi.dev/",
+        "jobTitle": "Software & Security Architect | Creator of ReshkoEngine",
+        "image": "https://joudi.dev/images/official-portrait.png",
         "worksFor": {
           "@type": "Organization",
           "name": "Independent Consultant / IT Legend"
@@ -85,1434 +99,770 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Mobile Top Header Bar -->
-    <header class="mobile-header" role="banner">
-      <a href="#hero" class="sidebar-logo">
+    <header class="mobile-header">
+      <a href="#hero" class="sidebar-logo" aria-label="joudi.dev — back to top">
         joudi<span class="logo-dot">.</span>dev
       </a>
-      <button
-        class="mobile-menu-toggle"
-        id="mobile-menu-toggle"
-        aria-expanded="false"
-        aria-controls="sidebar"
-        aria-label="Toggle navigation drawer"
-      >
-        <svg
-          width="22"
-          height="22"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
+      <div class="mobile-header-actions">
+        <button class="btn btn-pink btn-sm" id="hire-me-header-btn" type="button">
+          Hire Me
+        </button>
+        <button
+          class="mobile-menu-toggle"
+          id="mobile-menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="sidebar"
+          aria-label="Open navigation menu"
         >
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
     </header>
 
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
     <div class="app-container">
-      <!-- LEFT SIDEBAR NAVIGATION (GUMROAD DASHBOARD STYLE) -->
-      <aside
-        class="sidebar"
-        id="sidebar"
-        role="navigation"
-        aria-label="Sidebar Navigation"
-      >
+      <!-- LEFT SIDEBAR NAVIGATION -->
+      <aside class="sidebar" id="sidebar" aria-label="Site navigation">
         <div class="sidebar-header">
           <a href="#hero" class="sidebar-logo">
             joudi<span class="logo-dot">.</span>dev
           </a>
         </div>
 
-        <div class="sidebar-nav">
-          <div class="nav-group-title">Navigation</div>
+        <nav class="sidebar-nav" aria-label="Sections">
+          <div class="nav-group-title">// Navigate</div>
           <ul class="sidebar-menu">
-            <li class="sidebar-menu-item">
+            <li>
               <a href="#hero" class="sidebar-menu-link active">
-                <svg
-                  class="sidebar-menu-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
-                  ></path>
-                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
+                <i data-lucide="house" class="sidebar-menu-icon"></i>
                 <span>Home</span>
               </a>
             </li>
-
-            <li class="sidebar-menu-item">
+            <li>
+              <a href="#api-tester-section" class="sidebar-menu-link">
+                <i data-lucide="terminal" class="sidebar-menu-icon"></i>
+                <span>Live API Tester</span>
+                <span class="sidebar-menu-tag">LIVE</span>
+              </a>
+            </li>
+            <li>
+              <a href="#projects" class="sidebar-menu-link">
+                <i data-lucide="folder-kanban" class="sidebar-menu-icon"></i>
+                <span>Projects</span>
+              </a>
+            </li>
+            <li>
+              <a href="#recommendations" class="sidebar-menu-link">
+                <i data-lucide="quote" class="sidebar-menu-icon"></i>
+                <span>Endorsements</span>
+              </a>
+            </li>
+            <li>
+              <a href="#services" class="sidebar-menu-link">
+                <i data-lucide="briefcase" class="sidebar-menu-icon"></i>
+                <span>Services</span>
+              </a>
+            </li>
+            <li>
               <a href="#about" class="sidebar-menu-link">
-                <svg
-                  class="sidebar-menu-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
+                <i data-lucide="user" class="sidebar-menu-icon"></i>
                 <span>Profile</span>
               </a>
             </li>
-
-            <li class="sidebar-menu-item">
-              <a href="#projects" class="sidebar-menu-link">
-                <svg
-                  class="sidebar-menu-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
-                  ></path>
-                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                </svg>
-                <span>Projects</span>
-                <span class="sidebar-menu-badge badge-pink">3</span>
-              </a>
-            </li>
-
-            <li class="sidebar-menu-item">
-              <a href="#services" class="sidebar-menu-link">
-                <svg
-                  class="sidebar-menu-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <line x1="12" y1="1" x2="12" y2="23"></line>
-                  <path
-                    d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
-                  ></path>
-                </svg>
-                <span>Services</span>
-                <span class="sidebar-menu-badge badge-emerald">5</span>
-              </a>
-            </li>
-
-            <li class="sidebar-menu-item">
+            <li>
               <a href="#experience" class="sidebar-menu-link">
-                <svg
-                  class="sidebar-menu-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <polygon
-                    points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"
-                  ></polygon>
-                </svg>
+                <i data-lucide="award" class="sidebar-menu-icon"></i>
                 <span>Experience</span>
               </a>
             </li>
-
-            <li class="sidebar-menu-item">
+            <li>
               <a href="#skills" class="sidebar-menu-link">
-                <svg
-                  class="sidebar-menu-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <circle cx="12" cy="12" r="3"></circle>
-                  <path
-                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
-                  ></path>
-                </svg>
+                <i data-lucide="cpu" class="sidebar-menu-icon"></i>
                 <span>Skills &amp; Stack</span>
               </a>
             </li>
-
-            <li class="sidebar-menu-item">
-              <a href="#api-tester-section" class="sidebar-menu-link">
-                <svg
-                  class="sidebar-menu-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-                <span>Live API Tester</span>
-              </a>
-            </li>
-
-            <li class="sidebar-menu-item">
+            <li>
               <a href="#contact" class="sidebar-menu-link">
-                <svg
-                  class="sidebar-menu-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                  ></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
+                <i data-lucide="mail" class="sidebar-menu-icon"></i>
                 <span>Contact</span>
               </a>
             </li>
-
-            <li class="sidebar-menu-item">
-              <a
-                href="https://www.upwork.com/freelancers/~0110990d2c3ed41795?mp_source=share"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="sidebar-menu-link"
-                style="color: var(--accent-upwork)"
-              >
-                <svg
-                  class="sidebar-menu-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="var(--accent-upwork)"
-                  stroke-width="2"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="8" x2="12" y2="16"></line>
-                  <line x1="8" y1="12" x2="16" y2="12"></line>
-                </svg>
-                <span>Upwork Profile ↗</span>
-              </a>
-            </li>
           </ul>
-        </div>
+        </nav>
 
-        <!-- Bottom Profile Card -->
+        <!-- Bottom Profile Card (opens booking modal) -->
         <div class="sidebar-footer">
-          <div
+          <button
             class="profile-pill"
             id="hire-me-sidebar-btn"
-            role="button"
-            tabindex="0"
+            type="button"
+            aria-label="Hire Joudi Mohammad — book a call"
           >
-            <div class="profile-avatar" aria-hidden="true">
+            <span class="profile-avatar">
               <img
                 src="/images/official-portrait.png"
                 alt=""
-                width="32"
-                height="32"
+                width="34"
+                height="34"
+                loading="lazy"
               />
-            </div>
-            <div class="profile-info">
-              <span class="profile-name">Joudi Adeeb</span>
-              <span class="profile-role">Golden Visa UAE</span>
-            </div>
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              style="margin-left: auto; color: var(--text-muted)"
-            >
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </div>
+            </span>
+            <span class="profile-info">
+              <span class="profile-name">Joudi Mohammad</span>
+              <span class="profile-role"
+                ><span class="status-dot"></span>Golden Visa</span
+              >
+            </span>
+            <i data-lucide="arrow-up-right" class="profile-pill-icon"></i>
+          </button>
         </div>
       </aside>
 
-      <!-- MAIN CONTENT AREA (DASHBOARD LAYOUT) -->
-      <main class="main-content-area" id="main-content" role="main">
-        <!-- TOP QUICK BIO & STATUS BANNER -->
-        <div class="top-notification-banner">
-          <div class="banner-left">
-            <div class="banner-info-icon">⚡</div>
-            <div class="banner-text">
-              <h3>
-                Joudi Mohammad — Backend &amp; Database Engineer | Security
-                Specialist
-              </h3>
-              <p>
-                Golden Visa UAE &bull; Abu Dhabi &bull; C# .NET 10, Advanced
-                T-SQL, ADO.NET, OWASP API Security &amp; PenTesting
-              </p>
-            </div>
-          </div>
-          <div class="banner-actions">
-            <button class="btn btn-pink" id="hire-me-header-btn" type="button">
-              ⚡ Hire Me / Schedule
-            </button>
-            <button class="btn btn-dark copy-email-btn" type="button">
-              Copy Email
-            </button>
-          </div>
-        </div>
-
-        <!-- HTB CYBER DASHBOARD MODULES GRID -->
-        <div class="dashboard-header-block">
-          <div>
-            <h2 class="dashboard-title">
-              System Modules &amp; Direct Access 🎯
-            </h2>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0">
-              Direct shortcuts to core architecture labs, live API terminal, and
-              audit services.
-            </p>
-          </div>
-          <button class="dashboard-toggle" type="button">Show less ✕</button>
-        </div>
-
-        <div class="gumroad-grid">
-          <!-- Card 1: Profile & Bio -->
-          <a href="#about" class="gumroad-card gamified-card">
-            <div class="card-gamified-tag">[MOD-01] &bull; OVERVIEW</div>
-            <div class="gumroad-card-icon gumroad-card-icon--portrait">
-              <img
-                src="/images/official-portrait.png"
-                alt=""
-                width="48"
-                height="48"
-              />
-            </div>
-            <h3 class="gumroad-card-title">Profile &amp; About</h3>
-            <p class="gumroad-card-desc">
-              Abu Dhabi Engineer &bull; Golden Visa
-            </p>
-            <span class="gamified-action-btn">ACCESS ➔</span>
-          </a>
-
-          <!-- Card 2: Projects & Solutions -->
-          <a href="#projects" class="gumroad-card gamified-card">
-            <div class="card-gamified-tag">[MOD-02] &bull; CODE LABS</div>
-            <div class="gumroad-card-icon">🚀</div>
-            <h3 class="gumroad-card-title">Projects &amp; Solutions</h3>
-            <p class="gumroad-card-desc">
-              FacilityFlux, ReshkoEngine &amp; DVLD
-            </p>
-            <span class="gamified-action-btn">INSPECT ➔</span>
-          </a>
-
-          <!-- Card 3: Live API Terminal -->
-          <a href="#api-tester-section" class="gumroad-card gamified-card">
-            <div class="card-gamified-tag">[MOD-03] &bull; KESTREL API</div>
-            <div class="gumroad-card-icon">⚡</div>
-            <h3 class="gumroad-card-title">Live API Tester</h3>
-            <p class="gumroad-card-desc">Query Kestrel C# API Endpoint</p>
-            <span class="gamified-action-btn">EXECUTE ➔</span>
-          </a>
-
-          <!-- Card 4: Services -->
-          <a href="#services" class="gumroad-card gamified-card">
-            <div class="card-gamified-tag">[MOD-04] &bull; SERVICES</div>
-            <div class="gumroad-card-icon">🛠️</div>
-            <h3 class="gumroad-card-title">Services &amp; Audits</h3>
-            <p class="gumroad-card-desc">Instant 1-Click Service Request</p>
-            <span class="gamified-action-btn">ORDER ➔</span>
-          </a>
-
-          <!-- Card 5: Skills & Tech Stack -->
-          <a href="#skills" class="gumroad-card gamified-card">
-            <div class="card-gamified-tag">[MOD-05] &bull; TECH MATRIX</div>
-            <div class="gumroad-card-icon">🧠</div>
-            <h3 class="gumroad-card-title">Skills &amp; Tech Stack</h3>
-            <p class="gumroad-card-desc">C# .NET 10, T-SQL &amp; OWASP</p>
-            <span class="gamified-action-btn">ANALYZE ➔</span>
-          </a>
-
-          <!-- Card 6: Experience Timeline -->
-          <a href="#experience" class="gumroad-card gamified-card">
-            <div class="card-gamified-tag">[MOD-06] &bull; FIELD LOGS</div>
-            <div class="gumroad-card-icon">📜</div>
-            <h3 class="gumroad-card-title">Experience Timeline</h3>
-            <p class="gumroad-card-desc">IT Legend Penetration Testing</p>
-            <span class="gamified-action-btn">DECRYPT ➔</span>
-          </a>
-
-          <!-- Card 7: Recommendations -->
-          <a href="#recommendations" class="gumroad-card gamified-card">
-            <div class="card-gamified-tag">[MOD-07] &bull; REPUTATION</div>
-            <div class="gumroad-card-icon">💬</div>
-            <h3 class="gumroad-card-title">Recommendations</h3>
-            <p class="gumroad-card-desc">CEO Endorsements &amp; Reviews</p>
-            <span class="gamified-action-btn">VERIFY ➔</span>
-          </a>
-
-          <!-- Card 8: Direct Contact -->
-          <a href="#contact" class="gumroad-card gamified-card">
-            <div class="card-gamified-tag">[MOD-08] &bull; GATEWAY</div>
-            <div class="gumroad-card-icon">📞</div>
-            <h3 class="gumroad-card-title">Contact &amp; Onboarding</h3>
-            <p class="gumroad-card-desc">
-              Email, WhatsApp &amp; Upwork Contract
-            </p>
-            <span class="gamified-action-btn">CONNECT ➔</span>
-          </a>
-        </div>
-
-        <!-- HERO SECTION -->
+      <!-- MAIN CONTENT AREA -->
+      <main class="main-content-area" id="main-content">
+        <!-- HERO SECTION (FIRST SCREEN) -->
         <section id="hero" class="hero-section" aria-labelledby="hero-title">
-          <div class="hero-identity">
-            <img
-              class="hero-portrait"
-              src="/images/official-portrait.png"
-              alt="Official portrait of Joudi Adeeb"
-              width="112"
-              height="112"
-            />
-            <div class="section-header" style="margin-bottom: 0">
-              <span class="section-subtitle">OVERVIEW &bull; ABU DHABI, UAE</span>
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <div class="hero-identity">
+                <img
+                  class="hero-portrait"
+                  src="/images/official-portrait.png"
+                  alt="Portrait of Joudi Mohammad"
+                  width="52"
+                  height="52"
+                  fetchpriority="high"
+                />
+                <span class="status-pill">
+                  <span class="status-dot"></span>
+                  Golden Visa &bull; Abu Dhabi, UAE
+                </span>
+              </div>
+
               <h1 id="hero-title">Joudi Mohammad</h1>
-              <p
-                style="
-                  font-size: 1.15rem;
-                  color: var(--accent-pink);
-                  font-weight: 600;
-                  margin-top: 0.25rem;
-                "
-              >
-                Backend &amp; Database Engineer &bull; Application Security
-                Specialist
+              <p class="hero-role">
+                Software &amp; Security Architect &bull; Creator of ReshkoEngine
+              </p>
+              <p class="hero-value">
+                I build secure, high-performance backends and SaaS platforms
+                for businesses
+                <span class="hero-value-muted"
+                  >&mdash; and test them the way an attacker would.</span
+                >
+              </p>
+
+              <div class="hero-actions">
+                <button
+                  class="btn btn-pink btn-lg"
+                  id="hire-me-hero-btn"
+                  type="button"
+                >
+                  <span>Hire Me</span>
+                  <i data-lucide="arrow-right"></i>
+                </button>
+                <a href="#projects" class="btn btn-outline btn-lg">
+                  <span>View Projects</span>
+                </a>
+              </div>
+
+              <p class="hero-contact-line">
+                Or email me directly:
+                <button class="copy-email-btn" type="button">
+                  joudi.adeeb@gmail.com
+                </button>
               </p>
             </div>
+
+            <!-- Hero visual: how ReshkoEngine turns a schema into a backend -->
+            <figure class="hero-visual">
+              <div class="arch-window">
+                <div class="arch-window-bar" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                  <div class="arch-window-title">reshko build --target net10</div>
+                </div>
+                <div
+                  class="arch-diagram"
+                  role="img"
+                  aria-label="Diagram: a database schema goes into ReshkoEngine, which generates a .NET 10 Clean Architecture solution with Data Access, Business Logic, Shared contracts and Web API layers."
+                >
+                  <div class="arch-node">
+                    <span class="arch-node-icon"><i data-lucide="database"></i></span>
+                    <span class="arch-node-label">
+                      <strong>Your database schema</strong>
+                      <small>SQL Server &bull; PostgreSQL &bull; MySQL &bull; Oracle</small>
+                    </span>
+                  </div>
+                  <div class="arch-connector"></div>
+                  <div class="arch-node arch-node--engine">
+                    <span class="arch-node-icon"><i data-lucide="cpu"></i></span>
+                    <span class="arch-node-label">
+                      <strong>ReshkoEngine</strong>
+                      <small>12,000+ lines of C# &bull; multi-tenant RLS</small>
+                    </span>
+                  </div>
+                  <div class="arch-connector"></div>
+                  <div class="arch-layers">
+                    <div class="arch-node">
+                      <span class="arch-node-icon"><i data-lucide="database"></i></span>
+                      <span class="arch-node-label"><strong>DAL</strong><small>Data access</small></span>
+                    </div>
+                    <div class="arch-node">
+                      <span class="arch-node-icon"><i data-lucide="layers"></i></span>
+                      <span class="arch-node-label"><strong>BLL</strong><small>Business logic</small></span>
+                    </div>
+                    <div class="arch-node">
+                      <span class="arch-node-icon"><i data-lucide="boxes"></i></span>
+                      <span class="arch-node-label"><strong>Shared</strong><small>DTOs &amp; contracts</small></span>
+                    </div>
+                    <div class="arch-node">
+                      <span class="arch-node-icon"><i data-lucide="server"></i></span>
+                      <span class="arch-node-label"><strong>Web API</strong><small>JWT &bull; policies</small></span>
+                    </div>
+                  </div>
+                  <p class="arch-footer">
+                    <span class="prompt">&gt;</span> Clean Architecture .NET 10
+                    solution, generated in seconds
+                  </p>
+                </div>
+              </div>
+            </figure>
           </div>
 
-          <p
-            style="
-              font-size: 1.05rem;
-              color: var(--text-secondary);
-              max-width: 800px;
-              line-height: 1.7;
-              margin-bottom: 1.5rem;
-            "
-          >
-            I design bare-metal C# .NET 10 micro-frameworks, high-performance
-            database architectures, and execute offensive security audits on
-            production API endpoints. Specializing in N-Tier architecture
-            generation, strictly typed ADO.NET execution, and OWASP IDOR
-            mitigation.
-          </p>
-
-          <div style="display: flex; flex-wrap: wrap; gap: 0.75rem">
-            <button class="btn btn-pink" id="hire-me-hero-btn" type="button">
-              <span>⚡ Hire Me / Schedule Interview</span>
-            </button>
-
-            <a
-              href="https://www.upwork.com/freelancers/~0110990d2c3ed41795?mp_source=share"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-dark"
-              style="
-                color: var(--accent-upwork);
-                border-color: var(--accent-upwork);
-              "
-            >
-              <span>Upwork Profile ↗</span>
+          <!-- Trust strip: credibility before scrolling -->
+          <div class="trust-strip reveal">
+            <div class="trust-item">
+              <i data-lucide="badge-check" class="trust-item-icon"></i>
+              <div>
+                <strong>UAE Golden Visa holder</strong>
+                <span>Based in Abu Dhabi. No visa sponsorship needed.</span>
+              </div>
+            </div>
+            <a href="#recommendations" class="trust-item">
+              <i data-lucide="quote" class="trust-item-icon"></i>
+              <div>
+                <strong>Endorsed by a CEO</strong>
+                <span
+                  >&ldquo;What stood out the most was his honesty and
+                  integrity.&rdquo; &mdash; Ali Shahin, CEO at IT Legend</span
+                >
+              </div>
             </a>
-
-            <a href="#projects" class="btn btn-outline">
-              <span>View Projects</span>
+            <a href="#api-tester-section" class="trust-item">
+              <i data-lucide="terminal" class="trust-item-icon"></i>
+              <div>
+                <strong>Proof you can click</strong>
+                <span>Log in to my live production API right on this page.</span>
+              </div>
             </a>
-
-            <button class="btn btn-outline copy-email-btn" type="button">
-              <span>joudi.adeeb@gmail.com</span>
-            </button>
           </div>
         </section>
 
-        <!-- ABOUT SECTION -->
-        <section id="about" aria-labelledby="about-title">
-          <div class="section-header">
-            <span class="section-subtitle">01 / Engineering Philosophy</span>
-            <h2 id="about-title">Who Am I &amp; Technical Mindset</h2>
-          </div>
+        <!-- LIVE API TESTER SECTION (FEATURED DIFFERENTIATOR) -->
+        <section id="api-tester-section" aria-labelledby="api-tester-title">
+          <div class="api-feature">
+            <div class="reveal">
+              <span class="section-subtitle">MOD-01 / Live API</span>
+              <h2 id="api-tester-title">Don&rsquo;t take my word for it. Test it.</h2>
+              <p class="section-lead">
+                This isn&rsquo;t a mockup. The console sends a real login
+                request to my hosted ASP.NET Core backend and shows you exactly
+                what it returns.
+              </p>
+              <ol class="api-steps">
+                <li>
+                  <span class="api-step-num">1</span>
+                  <span
+                    >Use the demo login
+                    <strong class="mono">joudi / joudi</strong> (already filled
+                    in).</span
+                  >
+                </li>
+                <li>
+                  <span class="api-step-num">2</span>
+                  <span>Press <strong>Get a live token</strong>.</span>
+                </li>
+                <li>
+                  <span class="api-step-num">3</span>
+                  <span
+                    >Read the real JWT response, then explore every endpoint in
+                    the
+                    <a
+                      class="text-link"
+                      href="https://joudi-dvld.runasp.net/Scalar/v1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >interactive API docs</a
+                    >.</span
+                  >
+                </li>
+              </ol>
+            </div>
 
-          <div class="grid-1-2">
-            <article class="card about-portrait-card">
-              <img
-                class="about-portrait"
-                src="/images/official-portrait.png"
-                alt="Joudi Adeeb official portrait"
-                width="280"
-                height="280"
-              />
-              <h3 class="card-title" style="margin: 1rem 0 0.35rem">
-                Joudi Adeeb
-              </h3>
-              <p
-                style="
-                  font-size: 0.85rem;
-                  color: var(--text-muted);
-                  font-family: var(--font-mono);
-                  margin-bottom: 0.75rem;
-                "
-              >
-                Backend &amp; Database Engineer
-              </p>
-              <p style="font-size: 0.95rem">
-                With a background in Cybersecurity (Dean's List at Abu Dhabi
-                University) and hands-on penetration testing experience, I build
-                backend systems from a dual perspective: maximum runtime
-                efficiency and total security immunity.
-              </p>
-              <div style="margin-top: 1rem">
-                <span class="badge badge-emerald"
-                  >Available in Abu Dhabi, UAE</span
-                >
-                <span class="badge badge-pink">Immediate Onboarding</span>
+            <div class="api-console reveal">
+              <div class="arch-window-bar" aria-hidden="true">
+                <span></span><span></span><span></span>
+                <div class="arch-window-title">joudi-dvld.runasp.net &mdash; Kestrel</div>
               </div>
-            </article>
+              <div class="api-console-body">
+                <div class="api-credentials">
+                  <div>
+                    <label for="api-username">username</label>
+                    <input type="text" id="api-username" value="joudi" autocomplete="off" />
+                  </div>
+                  <div>
+                    <label for="api-password">password</label>
+                    <input type="text" id="api-password" value="joudi" autocomplete="off" />
+                  </div>
+                </div>
 
-            <article class="card">
-              <h3 class="card-title" style="margin-bottom: 0.75rem">
-                Architectural Mindset
-              </h3>
-              <ul style="list-style: none; padding-left: 0">
-                <li
-                  style="
-                    margin-bottom: 0.75rem;
-                    font-size: 0.925rem;
-                    color: var(--text-secondary);
-                  "
-                >
-                  <strong style="color: var(--text-primary)"
-                    >Bare-Metal ADO.NET Performance:</strong
+                <div class="api-tester-header">
+                  <span class="api-endpoint"
+                    ><span class="api-method">POST</span>/api/Auth/login</span
                   >
-                  I eliminate implicit data type conversions and plan
-                  recompilations by implementing strictly typed ADO.NET
-                  parameters over heavy ORM overhead.
-                </li>
-                <li
-                  style="
-                    margin-bottom: 0.75rem;
-                    font-size: 0.925rem;
-                    color: var(--text-secondary);
-                  "
+                  <button class="btn btn-pink btn-sm" id="test-api-btn" type="button">
+                    <i data-lucide="key-round"></i>
+                    <span>Get a live token</span>
+                  </button>
+                </div>
+                <pre class="api-response" id="api-response-output" aria-live="polite">
+// Press "Get a live token" to authenticate against the live server...</pre
                 >
-                  <strong style="color: var(--text-primary)"
-                    >Zero-Trust API Security:</strong
+
+                <div id="scalar-enjoy-msg" class="api-docs-note" style="display: none">
+                  Explore the full API in the interactive Scalar docs:
+                  <a
+                    class="text-link mono"
+                    href="https://joudi-dvld.runasp.net/Scalar/v1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >joudi-dvld.runasp.net/Scalar/v1</a
                   >
-                  I audit API routes for OWASP Top 10 vulnerabilities (IDOR,
-                  Broken Access Control, Excessive Data Exposure) and build
-                  cryptographic defenses (PBKDF2/SHA256, Refresh Token
-                  Rotation).
-                </li>
-                <li
-                  style="
-                    margin-bottom: 0;
-                    font-size: 0.925rem;
-                    color: var(--text-secondary);
-                  "
-                >
-                  <strong style="color: var(--text-primary)"
-                    >Row-Level Tenant Isolation:</strong
-                  >
-                  Architecting database schemas with CompanyID tracking tokens
-                  to guarantee multi-tenant data boundary isolation at the
-                  database layer.
-                </li>
-              </ul>
-            </article>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         <!-- PROJECTS SECTION -->
         <section id="projects" aria-labelledby="projects-title">
-          <div class="section-header">
-            <span class="section-subtitle">02 / Key Production Systems</span>
-            <h2 id="projects-title">
-              Featured Projects &amp; Software Solutions
-            </h2>
+          <div class="section-header reveal">
+            <span class="section-subtitle">MOD-02 / Projects</span>
+            <h2 id="projects-title">Selected work</h2>
+            <p class="section-lead">
+              It starts with ReshkoEngine, my own .NET 10 architecture compiler.
+              FacilityFlux, DVLD and the HealthTech platform were all built on
+              it.
+            </p>
           </div>
 
-          <div class="grid-2">
-            <!-- Project Card 1: FacilityFlux -->
-            <article class="card">
-              <div class="card-header">
-                <div>
-                  <span class="badge badge-emerald">Live SaaS · Sep 16, 2026</span>
-                  <h3 class="card-title" style="margin-top: 0.5rem">
-                    FacilityFlux
-                  </h3>
-                  <p class="card-subtitle">
-                    Multi-Tenant Residential &amp; Facility SaaS
-                  </p>
-                </div>
+          <div class="project-grid">
+            <!-- Project 1 (Centerpiece): ReshkoEngine -->
+            <article class="card project-card project-card--featured reveal">
+              <div class="project-media" aria-hidden="true">
+                <div class="solution-tree"><span class="tree-root">MySolution/</span>
+├── MySolution.slnx         <span class="tree-comment"># .NET 10 solution</span>
+├── <span class="tree-accent">DAL</span>                     <span class="tree-comment"># ADO.NET async data access</span>
+├── <span class="tree-accent">BLL</span>                     <span class="tree-comment"># logic, DTO mapping, hashing</span>
+├── <span class="tree-accent">Shared</span>                  <span class="tree-comment"># DTOs, TenantContext, PBKDF2</span>
+└── <span class="tree-accent">WebAPI</span>                  <span class="tree-comment"># JWT, tenant middleware</span></div>
               </div>
-
-              <div class="card-body">
-                <p style="font-size: 0.9rem">
-                  Multi-tenant B2B SaaS for residential towers to manage access,
-                  amenities, and resident/employee operations — built end-to-end
-                  in under 48 hours with ReshkoEngine.
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="badge badge-pink">Proprietary &bull; Private IP</span>
+                  <span class="badge">Centerpiece</span>
+                </div>
+                <h3 class="project-title">ReshkoEngine v1.0.0</h3>
+                <p class="project-outcome">
+                  A custom .NET 10 architecture compiler that generates
+                  enterprise-grade backends in seconds.
+                </p>
+                <p class="project-detail">
+                  12,000+ lines of C# that turn a database schema into a
+                  production-ready ASP.NET Core Clean Architecture solution,
+                  with multi-tenant row-level security and native SQL Server,
+                  PostgreSQL, Oracle, MySQL &amp; EF Core output.
                 </p>
                 <div class="badge-group">
                   <span class="badge">C#</span>
-                  <span class="badge">.NET Core</span>
-                  <span class="badge">PostgreSQL</span>
-                  <span class="badge">RESTful API</span>
-                  <span class="badge">SaaS Development</span>
+                  <span class="badge">.NET 10</span>
+                  <span class="badge">Code Generation</span>
+                  <span class="badge">Clean Architecture</span>
+                  <span class="badge">Multi-Tenant RLS</span>
                 </div>
-              </div>
-
-              <div class="card-footer" style="flex-wrap: wrap; gap: 0.5rem">
-                <button
-                  class="btn btn-pink btn-sm"
-                  data-project-id="facilityflux"
-                >
-                  <span>Inspect System</span>
-                </button>
-                <a
-                  href="https://facilityflux.joudi.dev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-outline btn-sm"
-                >
-                  <span>Live Demo ↗</span>
-                </a>
+                <div class="card-footer">
+                  <button class="btn btn-pink btn-sm" type="button" data-project-id="reshko">
+                    <span>See how it works</span>
+                  </button>
+                </div>
               </div>
             </article>
 
-            <!-- Project Card 2: DVLD Web Platform -->
-            <article class="card">
-              <div class="card-header">
-                <div>
-                  <span class="badge badge-emerald"
-                    >Full-Stack Web · Aug 29, 2026</span
-                  >
-                  <h3 class="card-title" style="margin-top: 0.5rem">
-                    DVLD: Enterprise Full-Stack Web Platform
-                  </h3>
-                  <p class="card-subtitle">
-                    .NET 10 &amp; React Licensing Platform
-                  </p>
+            <!-- Project 2: Enterprise HealthTech SaaS -->
+            <article class="card project-card reveal">
+              <!-- PLACEHOLDER: replace with
+                <div class="project-media"><img src="/images/projects/healthtech.webp" alt="..." width="1600" height="1000" loading="lazy" decoding="async" /></div> -->
+              <div class="project-media project-media--placeholder" role="img" aria-label="Image placeholder for the Enterprise HealthTech SaaS project">
+                <i data-lucide="stethoscope"></i>
+                <span class="placeholder-label">Mockup coming soon (NDA)</span>
+                <code>/images/projects/healthtech.webp</code>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="badge badge-pink">Pre-launch &bull; Under NDA</span>
+                </div>
+                <h3 class="project-title">Enterprise HealthTech SaaS</h3>
+                <p class="project-outcome">
+                  A fully integrated B2C clinical platform with AI evaluation
+                  pipelines, multi-gateway billing, and role-based data
+                  isolation, built in days using ReshkoEngine.
+                </p>
+                <div class="badge-group">
+                  <span class="badge">.NET 10</span>
+                  <span class="badge">AI Pipelines</span>
+                  <span class="badge">Multi-Gateway Billing</span>
+                  <span class="badge">RBAC</span>
                 </div>
               </div>
+            </article>
 
-              <div class="card-body">
-                <p style="font-size: 0.9rem">
+            <!-- Project 3: Multi-Tenant Real Estate CRM -->
+            <article class="card project-card reveal">
+              <!-- PLACEHOLDER: replace with
+                <div class="project-media"><img src="/images/projects/real-estate-crm.webp" alt="..." width="1600" height="1000" loading="lazy" decoding="async" /></div> -->
+              <div class="project-media project-media--placeholder" role="img" aria-label="Image placeholder for the Multi-Tenant Real Estate CRM project">
+                <i data-lucide="building-2"></i>
+                <span class="placeholder-label">Screenshot or schema diagram needed</span>
+                <code>/images/projects/real-estate-crm.webp</code>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="badge">B2B Property Management</span>
+                </div>
+                <h3 class="project-title">Multi-Tenant Real Estate CRM</h3>
+                <p class="project-outcome">
+                  A high-performance B2B property management system with strict
+                  row-level security and automated workflows.
+                </p>
+                <div class="badge-group">
+                  <span class="badge">Multi-Tenancy</span>
+                  <span class="badge">Row-Level Security</span>
+                  <span class="badge">Workflow Automation</span>
+                  <span class="badge">SQL Server</span>
+                </div>
+                <div class="card-footer">
+                  <button class="btn btn-outline btn-sm" type="button" data-project-id="crm">
+                    <span>View schema design</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 4: DVLD Web Platform -->
+            <article class="card project-card reveal">
+              <!-- PLACEHOLDER: replace with
+                <div class="project-media"><img src="/images/projects/dvld.webp" alt="DVLD licensing platform dashboard" width="1600" height="1000" loading="lazy" decoding="async" /></div> -->
+              <div class="project-media project-media--placeholder" role="img" aria-label="Screenshot placeholder for the DVLD web platform">
+                <i data-lucide="image"></i>
+                <span class="placeholder-label">Screenshot needed (dvld.joudi.dev)</span>
+                <code>/images/projects/dvld.webp</code>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="badge badge-pink"><span class="status-dot"></span>Live</span>
+                  <span class="badge">Full-Stack Web &bull; Aug 29, 2026</span>
+                </div>
+                <h3 class="project-title">DVLD: Enterprise Full-Stack Web Platform</h3>
+                <p class="project-outcome">
+                  A live, end-to-end driving-licensing platform you can open
+                  right now &mdash; its API powers the console above.
+                </p>
+                <p class="project-detail">
                   Production-grade licensing platform scaffolded via
                   ReshkoEngine — React/TypeScript frontend, ASP.NET Core Clean
                   Architecture backend, and 121+ MS SQL stored procedures with
                   RBAC and dual-token JWT auth.
                 </p>
                 <div class="badge-group">
-                  <span class="badge">Full-Stack Development</span>
-                  <span class="badge">ASP.NET</span>
+                  <span class="badge">ASP.NET Core</span>
                   <span class="badge">React</span>
-                  <span class="badge">Microsoft SQL Server</span>
+                  <span class="badge">MS SQL Server</span>
                   <span class="badge">C#</span>
                 </div>
-              </div>
-
-              <div class="card-footer" style="flex-wrap: wrap; gap: 0.5rem">
-                <button class="btn btn-pink btn-sm" data-project-id="dvld">
-                  <span>Inspect System</span>
-                </button>
-                <a
-                  href="https://dvld.joudi.dev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-outline btn-sm"
-                >
-                  <span>Live Demo ↗</span>
-                </a>
-                <a
-                  href="https://github.com/Joudi0/DVLD-Full-Backend"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-outline btn-sm"
-                >
-                  <span>Backend Repo ↗</span>
-                </a>
+                <div class="card-footer">
+                  <button class="btn btn-pink btn-sm" type="button" data-project-id="dvld">
+                    <span>Project details</span>
+                  </button>
+                  <a href="https://dvld.joudi.dev" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                    <span>Live demo</span><i data-lucide="arrow-up-right"></i>
+                  </a>
+                  <a href="https://github.com/Joudi0/DVLD-Full-Backend" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                    <i data-lucide="github"></i><span>Code</span>
+                  </a>
+                </div>
               </div>
             </article>
 
-            <!-- Project Card 3: ReshkoEngine -->
-            <article class="card">
-              <div class="card-header">
-                <div>
-                  <span class="badge badge-pink"
-                    >Proprietary Core Engine (Private IP)</span
-                  >
-                  <h3 class="card-title" style="margin-top: 0.5rem">
-                    ReshkoEngine v1.0.0
-                  </h3>
-                  <p class="card-subtitle">
-                    Autonomous .NET 10 Architecture &amp; Code Compiler
-                  </p>
-                </div>
+            <!-- Project 5: FacilityFlux -->
+            <article class="card project-card reveal">
+              <!-- PLACEHOLDER: replace with
+                <div class="project-media"><img src="/images/projects/facilityflux.webp" alt="FacilityFlux residential operations dashboard" width="1600" height="1000" loading="lazy" decoding="async" /></div> -->
+              <div class="project-media project-media--placeholder" role="img" aria-label="Screenshot placeholder for FacilityFlux">
+                <i data-lucide="image"></i>
+                <span class="placeholder-label">Screenshot needed (facilityflux.joudi.dev)</span>
+                <code>/images/projects/facilityflux.webp</code>
               </div>
-
-              <div class="card-body">
-                <p style="font-size: 0.9rem">
-                  Proprietary 12,000+ line C# compilation engine that transforms
-                  DB schemas into production-ready ASP.NET Core Clean
-                  Architecture backends in seconds — with multi-tenant RLS and
-                  native SQL Server, PostgreSQL, Oracle, MySQL &amp; EF Core
-                  compilation.
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="badge badge-pink"><span class="status-dot"></span>Live</span>
+                  <span class="badge">SaaS &bull; Sep 16, 2026</span>
+                </div>
+                <h3 class="project-title">FacilityFlux</h3>
+                <p class="project-outcome">
+                  Gives residential towers one place to run access, amenities,
+                  and resident &amp; staff operations &mdash; built end-to-end
+                  in under 48 hours with ReshkoEngine.
                 </p>
                 <div class="badge-group">
-                  <span class="badge">C#</span>
-                  <span class="badge">.NET Core</span>
+                  <span class="badge">.NET 10</span>
                   <span class="badge">PostgreSQL</span>
-                  <span class="badge">MySQL</span>
-                  <span class="badge">Microsoft SQL Server</span>
+                  <span class="badge">Multi-Tenant SaaS</span>
+                  <span class="badge">REST API</span>
                 </div>
-              </div>
-
-              <div class="card-footer">
-                <button class="btn btn-pink btn-sm" data-project-id="reshko">
-                  <span>Inspect Architecture</span>
-                </button>
-                <a
-                  href="https://www.upwork.com/freelancers/~0110990d2c3ed41795?p=2076384185198800896"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-outline btn-sm"
-                  style="
-                    color: var(--accent-upwork);
-                    border-color: var(--accent-upwork);
-                  "
-                >
-                  <span>Upwork Case Study ↗</span>
-                </a>
-              </div>
-            </article>
-
-            <!-- Project Card 4: Full DVLD Desktop -->
-            <article class="card">
-              <div class="card-header">
-                <div>
-                  <span class="badge badge-emerald"
-                    >Desktop App · Jul 10, 2026</span
-                  >
-                  <h3 class="card-title" style="margin-top: 0.5rem">
-                    Full DVLD Desktop
-                  </h3>
-                  <p class="card-subtitle">
-                    .NET Framework WinForms Licensing Client
-                  </p>
+                <div class="card-footer">
+                  <button class="btn btn-pink btn-sm" type="button" data-project-id="facilityflux">
+                    <span>Project details</span>
+                  </button>
+                  <a href="https://facilityflux.joudi.dev" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                    <span>Live demo</span><i data-lucide="arrow-up-right"></i>
+                  </a>
                 </div>
-              </div>
-
-              <div class="card-body">
-                <p style="font-size: 0.9rem">
-                  Full DVLD Desktop Application with MS SQL database (more than
-                  15 tables), built with .NET Framework.
-                </p>
-                <div class="badge-group">
-                  <span class="badge">.NET Framework</span>
-                  <span class="badge">C#</span>
-                  <span class="badge">Microsoft SQL Server</span>
-                  <span class="badge">Database Design</span>
-                </div>
-              </div>
-
-              <div class="card-footer" style="flex-wrap: wrap; gap: 0.5rem">
-                <button
-                  class="btn btn-pink btn-sm"
-                  data-project-id="dvld-desktop"
-                >
-                  <span>Inspect System</span>
-                </button>
-                <a
-                  href="https://github.com/Joudi0/DVLD-Project"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-outline btn-sm"
-                >
-                  <span>GitHub Repo ↗</span>
-                </a>
-              </div>
-            </article>
-
-            <!-- Project Card 5: Multi-Tenant CRM Schema -->
-            <article class="card">
-              <div class="card-header">
-                <div>
-                  <span class="badge badge-pink"
-                    >Relational Database Modeling</span
-                  >
-                  <h3 class="card-title" style="margin-top: 0.5rem">
-                    Enterprise Multi-Tenant CRM Schema
-                  </h3>
-                  <p class="card-subtitle">
-                    25+ Tables Schema with Row-Level Isolation
-                  </p>
-                </div>
-              </div>
-
-              <div class="card-body">
-                <p style="font-size: 0.9rem">
-                  Architected a 25+ tables relational database schema enforcing
-                  Row-Level Tenant Isolation using global CompanyID tracking
-                  tokens across all transaction tables to guarantee physical
-                  multi-tenant data separation.
-                </p>
-                <div class="badge-group">
-                  <span class="badge">Relational Schema</span>
-                  <span class="badge">Row-Level Security</span>
-                  <span class="badge">SQL Triggers</span>
-                  <span class="badge">Data Isolation</span>
-                </div>
-              </div>
-
-              <div class="card-footer">
-                <button class="btn btn-pink btn-sm" data-project-id="crm">
-                  <span>View Schema Design</span>
-                </button>
               </div>
             </article>
           </div>
         </section>
 
-        <!-- LIVE API TESTER SECTION -->
-        <section id="api-tester-section" aria-labelledby="api-tester-title">
-          <div class="section-header">
-            <span class="section-subtitle">03 / LIVE INTEGRATION TERMINAL</span>
-            <h2 id="api-tester-title">
-              ASP.NET Core API Authentication &amp; Token Tester
-            </h2>
+        <!-- RECOMMENDATIONS SECTION -->
+        <section id="recommendations" aria-labelledby="recommendations-title">
+          <div class="section-header reveal">
+            <span class="section-subtitle">MOD-03 / Endorsements</span>
+            <h2 id="recommendations-title">What clients say</h2>
           </div>
 
-          <article class="card">
-            <div class="card-header">
-              <div>
-                <span class="badge badge-emerald">Live Auth Endpoint</span>
-                <h3 class="card-title" style="margin-top: 0.5rem">
-                  Authentication &amp; JWT Token Generation
-                </h3>
-                <p class="card-subtitle">
-                  POST request to Joudi's hosted ASP.NET Core Kestrel backend
-                </p>
-              </div>
-            </div>
-
-            <div class="card-body">
-              <p
-                style="
-                  font-size: 0.9rem;
-                  color: var(--text-secondary);
-                  margin-bottom: 1rem;
-                "
-              >
-                Enter username &amp; password (Default:
-                <strong style="color: var(--accent-pink)">joudi / joudi</strong
-                >) to authenticate and generate a JWT Token directly from the
-                endpoint:
-              </p>
-
-              <div
-                style="
-                  display: grid;
-                  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-                  gap: 0.85rem;
-                  margin-bottom: 1rem;
-                "
-              >
-                <div>
-                  <label
-                    for="api-username"
-                    style="
-                      font-size: 0.8rem;
-                      color: var(--text-muted);
-                      display: block;
-                      margin-bottom: 0.25rem;
-                    "
-                    >Username</label
-                  >
-                  <input
-                    type="text"
-                    id="api-username"
-                    value="joudi"
-                    style="
-                      background: var(--bg-main);
-                      border: 1px solid var(--border-muted);
-                      color: var(--text-primary);
-                      padding: 0.5rem 0.75rem;
-                      border-radius: var(--radius-sm);
-                      width: 100%;
-                      font-family: var(--font-mono);
-                      font-size: 0.875rem;
-                    "
-                  />
-                </div>
-                <div>
-                  <label
-                    for="api-password"
-                    style="
-                      font-size: 0.8rem;
-                      color: var(--text-muted);
-                      display: block;
-                      margin-bottom: 0.25rem;
-                    "
-                    >Password</label
-                  >
-                  <input
-                    type="text"
-                    id="api-password"
-                    value="joudi"
-                    style="
-                      background: var(--bg-main);
-                      border: 1px solid var(--border-muted);
-                      color: var(--text-primary);
-                      padding: 0.5rem 0.75rem;
-                      border-radius: var(--radius-sm);
-                      width: 100%;
-                      font-family: var(--font-mono);
-                      font-size: 0.875rem;
-                    "
-                  />
-                </div>
-              </div>
-
-              <div class="api-tester">
-                <div class="api-tester-header">
-                  <span
-                    style="
-                      font-family: var(--font-mono);
-                      font-size: 0.85rem;
-                      color: var(--accent-pink);
-                    "
-                    >POST /api/Auth/login</span
-                  >
-                  <button
-                    class="btn btn-pink btn-sm"
-                    id="test-api-btn"
-                    type="button"
-                  >
-                    🔑 Get Token / Login
-                  </button>
-                </div>
-                <pre class="api-response" id="api-response-output">
-// Enter joudi / joudi then click "Get Token" to receive authentication token...</pre
-                >
-              </div>
-
-              <div
-                id="scalar-enjoy-msg"
-                style="
-                  margin-top: 1.25rem;
-                  padding: 0.85rem 1rem;
-                  background: rgba(16, 185, 129, 0.1);
-                  border: 1px solid rgba(16, 185, 129, 0.3);
-                  border-radius: var(--radius-md);
-                  display: none;
-                "
-              >
-                <span
-                  style="
-                    color: var(--accent-emerald);
-                    font-weight: 700;
-                    font-size: 0.95rem;
-                  "
-                >
-                  Enjoy Interactive Scalar API Docs:
-                  <a
-                    href="https://joudi-dvld.runasp.net/Scalar/v1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style="
-                      color: var(--accent-cyan);
-                      text-decoration: underline;
-                      font-family: var(--font-mono);
-                    "
-                    >https://joudi-dvld.runasp.net/Scalar/v1 ↗</a
-                  >
-                </span>
-              </div>
-            </div>
-          </article>
+          <figure class="quote-card reveal">
+            <i data-lucide="quote" class="quote-mark"></i>
+            <blockquote class="quote-text">
+              &ldquo;I had the pleasure of working with Joudi, who conducted a
+              security review of my website and identified several important
+              vulnerabilities. What stood out the most was his honesty and
+              integrity &mdash; he was transparent, clear, and focused on
+              delivering real value... His attention to detail and ability to
+              uncover meaningful issues were truly impressive. I highly
+              recommend him to anyone looking for a reliable and skilled
+              security professional.&rdquo;
+            </blockquote>
+            <figcaption class="quote-footer">
+              <span class="quote-avatar" aria-hidden="true">AS</span>
+              <span>
+                <span class="quote-author-name">Ali Shahin</span><br />
+                <span class="quote-author-role">CEO at IT Legend &bull; LinkedIn endorsement</span>
+              </span>
+            </figcaption>
+          </figure>
         </section>
 
         <!-- SERVICES / OFFERINGS SECTION -->
         <section id="services" aria-labelledby="services-title">
-          <div class="section-header">
-            <span class="section-subtitle">04 / Offerings</span>
-            <h2 id="services-title">Engineering &amp; Consulting Services</h2>
+          <div class="section-header reveal">
+            <span class="section-subtitle">MOD-04 / Services</span>
+            <h2 id="services-title">How I can help</h2>
+            <p class="section-lead">
+              Pick a service and send a request in under a minute. I reply on
+              WhatsApp or email.
+            </p>
           </div>
 
           <div class="skills-category-grid">
-            <article
-              class="skills-category-card"
-              style="
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-              "
-            >
-              <div>
-                <h3
-                  class="skills-category-title"
-                  style="font-size: 1.1rem; color: var(--text-primary)"
-                >
-                  Backend API Architecture
-                </h3>
-                <p
-                  style="
-                    font-size: 0.875rem;
-                    color: var(--text-secondary);
-                    margin-bottom: 1rem;
-                  "
-                >
-                  Designing stateless, high-performance C# .NET 10 RESTful APIs
-                  and microservices using clean N-tier architectural patterns.
-                </p>
-                <strong
-                  style="
-                    color: var(--accent-pink);
-                    font-size: 0.8rem;
-                    font-family: var(--font-mono);
-                  "
-                  >DELIVERABLES:</strong
-                >
-                <ul
-                  style="
-                    list-style-type: disc;
-                    padding-left: 1.25rem;
-                    font-size: 0.825rem;
-                    color: var(--text-muted);
-                    margin-top: 0.25rem;
-                    margin-bottom: 1rem;
-                  "
-                >
-                  <li>Custom C# backend services</li>
-                  <li>JWT &amp; Refresh Token rotators</li>
-                  <li>OpenAPI / Scalar Documentation</li>
-                </ul>
-              </div>
-              <a
-                href="https://www.upwork.com/services/product/development-it-high-performance-c-net-restful-api-with-clean-architecture-2092175109920248429?ref=project_share&tier=0"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-emerald btn-sm"
-                style="
-                  width: 100%;
-                  justify-content: center;
-                  text-decoration: none;
-                  font-weight: 700;
-                  display: inline-flex;
-                  align-items: center;
-                  gap: 0.35rem;
-                "
-              >
-                <span>⚡ Order on Upwork ↗</span>
-              </a>
+            <article class="skills-category-card service-card reveal">
+              <span class="service-icon"><i data-lucide="server"></i></span>
+              <h3 class="skills-category-title">Backend API Architecture</h3>
+              <p class="service-desc">
+                Designing stateless, high-performance C# .NET 10 RESTful APIs
+                and microservices using clean N-tier architectural patterns.
+              </p>
+              <span class="service-deliverables-title">Deliverables</span>
+              <ul class="check-list">
+                <li><i data-lucide="check"></i>Custom C# backend services</li>
+                <li><i data-lucide="check"></i>JWT &amp; Refresh Token rotators</li>
+                <li><i data-lucide="check"></i>OpenAPI / Scalar Documentation</li>
+              </ul>
+              <button type="button" class="btn btn-outline btn-block service-request-btn" data-service-id="backend_api">
+                Order this service
+              </button>
             </article>
 
-            <article
-              class="skills-category-card"
-              style="
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-              "
-            >
-              <div>
-                <h3
-                  class="skills-category-title"
-                  style="font-size: 1.1rem; color: var(--text-primary)"
-                >
-                  Web Security &amp; API Audits
-                </h3>
-                <p
-                  style="
-                    font-size: 0.875rem;
-                    color: var(--text-secondary);
-                    margin-bottom: 1rem;
-                  "
-                >
-                  Offensive penetration testing for REST endpoints, identifying
-                  OWASP vulnerabilities, IDOR flaws, and broken access controls.
-                </p>
-                <strong
-                  style="
-                    color: var(--accent-pink);
-                    font-size: 0.8rem;
-                    font-family: var(--font-mono);
-                  "
-                  >DELIVERABLES:</strong
-                >
-                <ul
-                  style="
-                    list-style-type: disc;
-                    padding-left: 1.25rem;
-                    font-size: 0.825rem;
-                    color: var(--text-muted);
-                    margin-top: 0.25rem;
-                    margin-bottom: 1rem;
-                  "
-                >
-                  <li>Comprehensive Audit Reports</li>
-                  <li>PoC Exploitation Scripts</li>
-                  <li>Developer Patching Roadmaps</li>
-                </ul>
-              </div>
-              <a
-                href="https://www.upwork.com/services/product/development-it-a-comprehensive-api-and-web-app-pentesting-and-security-audit-report-2092474086238798300?ref=project_share"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-emerald btn-sm"
-                style="
-                  width: 100%;
-                  justify-content: center;
-                  text-decoration: none;
-                  font-weight: 700;
-                  display: inline-flex;
-                  align-items: center;
-                  gap: 0.35rem;
-                "
-              >
-                <span>⚡ Order on Upwork ↗</span>
-              </a>
+            <article class="skills-category-card service-card reveal">
+              <span class="service-icon"><i data-lucide="shield-check"></i></span>
+              <h3 class="skills-category-title">Web Security &amp; API Audits</h3>
+              <p class="service-desc">
+                Offensive penetration testing for REST endpoints, identifying
+                OWASP vulnerabilities, IDOR flaws, and broken access controls.
+              </p>
+              <span class="service-deliverables-title">Deliverables</span>
+              <ul class="check-list">
+                <li><i data-lucide="check"></i>Comprehensive Audit Reports</li>
+                <li><i data-lucide="check"></i>PoC Exploitation Scripts</li>
+                <li><i data-lucide="check"></i>Developer Patching Roadmaps</li>
+              </ul>
+              <button type="button" class="btn btn-outline btn-block service-request-btn" data-service-id="web_security">
+                Order this service
+              </button>
             </article>
 
-            <article
-              class="skills-category-card"
-              style="
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-              "
-            >
-              <div>
-                <h3
-                  class="skills-category-title"
-                  style="font-size: 1.1rem; color: var(--text-primary)"
-                >
-                  Database Design &amp; T-SQL Tuning
-                </h3>
-                <p
-                  style="
-                    font-size: 0.875rem;
-                    color: var(--text-secondary);
-                    margin-bottom: 1rem;
-                  "
-                >
-                  Architecting normalized relational schemas, Row-Level Tenant
-                  Isolation, and tuning T-SQL queries for bare-metal execution.
-                </p>
-                <strong
-                  style="
-                    color: var(--accent-pink);
-                    font-size: 0.8rem;
-                    font-family: var(--font-mono);
-                  "
-                  >DELIVERABLES:</strong
-                >
-                <ul
-                  style="
-                    list-style-type: disc;
-                    padding-left: 1.25rem;
-                    font-size: 0.825rem;
-                    color: var(--text-muted);
-                    margin-top: 0.25rem;
-                    margin-bottom: 1rem;
-                  "
-                >
-                  <li>Optimized Stored Procedures</li>
-                  <li>Index &amp; Execution Plan Tuning</li>
-                  <li>Multi-Tenant Schema Migration</li>
-                  <li>Database Schema Design From Scratch</li>
-                </ul>
-              </div>
-              <a
-                href="https://www.upwork.com/services/product/development-it-optimized-sql-server-database-design-and-t-sql-query-tuning-2092285350913626733?ref=project_share"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-emerald btn-sm"
-                style="
-                  width: 100%;
-                  justify-content: center;
-                  text-decoration: none;
-                  font-weight: 700;
-                  display: inline-flex;
-                  align-items: center;
-                  gap: 0.35rem;
-                "
-              >
-                <span>⚡ Order on Upwork ↗</span>
-              </a>
+            <article class="skills-category-card service-card reveal">
+              <span class="service-icon"><i data-lucide="database"></i></span>
+              <h3 class="skills-category-title">Database Design &amp; T-SQL Tuning</h3>
+              <p class="service-desc">
+                Architecting normalized relational schemas, Row-Level Tenant
+                Isolation, and tuning T-SQL queries for bare-metal execution.
+              </p>
+              <span class="service-deliverables-title">Deliverables</span>
+              <ul class="check-list">
+                <li><i data-lucide="check"></i>Optimized Stored Procedures</li>
+                <li><i data-lucide="check"></i>Index &amp; Execution Plan Tuning</li>
+                <li><i data-lucide="check"></i>Multi-Tenant Schema Migration</li>
+              </ul>
+              <button type="button" class="btn btn-outline btn-block service-request-btn" data-service-id="database_tuning">
+                Order this service
+              </button>
             </article>
 
-            <article
-              class="skills-category-card"
-              style="
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-              "
-            >
-              <div>
-                <h3
-                  class="skills-category-title"
-                  style="font-size: 1.1rem; color: var(--text-primary)"
-                >
-                  Full-Stack Web Development
-                </h3>
-                <p
-                  style="
-                    font-size: 0.875rem;
-                    color: var(--text-secondary);
-                    margin-bottom: 1rem;
-                  "
-                >
-                  Building end-to-end production web applications combining
-                  modern responsive frontends with secure C# .NET backends and
-                  robust databases.
-                </p>
-                <strong
-                  style="
-                    color: var(--accent-pink);
-                    font-size: 0.8rem;
-                    font-family: var(--font-mono);
-                  "
-                  >DELIVERABLES:</strong
-                >
-                <ul
-                  style="
-                    list-style-type: disc;
-                    padding-left: 1.25rem;
-                    font-size: 0.825rem;
-                    color: var(--text-muted);
-                    margin-top: 0.25rem;
-                    margin-bottom: 1rem;
-                  "
-                >
-                  <li>Complete Custom Web Application</li>
-                  <li>Secure Auth &amp; Dashboard Setup</li>
-                  <li>Cloud Deployment &amp; Live Hosting</li>
-                </ul>
-              </div>
-              <a
-                href="https://www.upwork.com/services/product/development-it-a-production-full-stack-web-application-with-asp-net-core-ui-2092496594145386646?ref=project_share"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-emerald btn-sm"
-                style="
-                  width: 100%;
-                  justify-content: center;
-                  text-decoration: none;
-                  font-weight: 700;
-                  display: inline-flex;
-                  align-items: center;
-                  gap: 0.35rem;
-                "
-              >
-                <span>⚡ Order on Upwork ↗</span>
-              </a>
+            <article class="skills-category-card service-card reveal">
+              <span class="service-icon"><i data-lucide="globe"></i></span>
+              <h3 class="skills-category-title">Full-Stack Web Development</h3>
+              <p class="service-desc">
+                Building end-to-end production web applications combining
+                modern responsive frontends with secure C# .NET backends and
+                robust databases.
+              </p>
+              <span class="service-deliverables-title">Deliverables</span>
+              <ul class="check-list">
+                <li><i data-lucide="check"></i>Database Schema Design From Scratch</li>
+                <li><i data-lucide="check"></i>Complete Custom Web Application</li>
+                <li><i data-lucide="check"></i>Secure Auth &amp; Dashboard Setup</li>
+                <li><i data-lucide="check"></i>Cloud Deployment &amp; Live Hosting</li>
+              </ul>
+              <button type="button" class="btn btn-outline btn-block service-request-btn" data-service-id="fullstack_app">
+                Order this service
+              </button>
             </article>
 
-            <article
-              class="skills-category-card"
-              style="
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-              "
-            >
-              <div>
-                <h3
-                  class="skills-category-title"
-                  style="font-size: 1.1rem; color: var(--text-primary)"
-                >
-                  Technical Consultation &amp; Advice
-                </h3>
-                <p
-                  style="
-                    font-size: 0.875rem;
-                    color: var(--text-secondary);
-                    margin-bottom: 1rem;
-                  "
-                >
-                  One-on-one technical consultation sessions for software
-                  architecture evaluation, code refactoring guidance, database
-                  review, and security advice.
-                </p>
-                <strong
-                  style="
-                    color: var(--accent-pink);
-                    font-size: 0.8rem;
-                    font-family: var(--font-mono);
-                  "
-                  >DELIVERABLES:</strong
-                >
-                <ul
-                  style="
-                    list-style-type: disc;
-                    padding-left: 1.25rem;
-                    font-size: 0.825rem;
-                    color: var(--text-muted);
-                    margin-top: 0.25rem;
-                    margin-bottom: 1rem;
-                  "
-                >
-                  <li>1-on-1 Consultation Session</li>
-                  <li>Architecture &amp; Code Review</li>
-                  <li>Actionable Optimization Plan</li>
-                </ul>
-              </div>
-              <a
-                href="https://www.upwork.com/services/product/development-it-joudi-2091937543916962268?ref=project_share"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-emerald btn-sm"
-                style="
-                  width: 100%;
-                  justify-content: center;
-                  text-decoration: none;
-                  font-weight: 700;
-                  display: inline-flex;
-                  align-items: center;
-                  gap: 0.35rem;
-                "
-              >
-                <span>⚡ Order on Upwork ↗</span>
-              </a>
+            <article class="skills-category-card service-card reveal">
+              <span class="service-icon"><i data-lucide="message-circle"></i></span>
+              <h3 class="skills-category-title">Technical Consultation &amp; Advice</h3>
+              <p class="service-desc">
+                One-on-one technical consultation sessions for software
+                architecture evaluation, code refactoring guidance, database
+                review, and security advice.
+              </p>
+              <span class="service-deliverables-title">Deliverables</span>
+              <ul class="check-list">
+                <li><i data-lucide="check"></i>1-on-1 Consultation Session</li>
+                <li><i data-lucide="check"></i>Architecture &amp; Code Review</li>
+                <li><i data-lucide="check"></i>Actionable Optimization Plan</li>
+              </ul>
+              <button type="button" class="btn btn-outline btn-block service-request-btn" data-service-id="consultation">
+                Order this service
+              </button>
             </article>
           </div>
         </section>
 
-        <!-- SKILLS & TECH STACK SECTION -->
-        <section id="skills" aria-labelledby="skills-title">
-          <div class="section-header">
-            <span class="section-subtitle">05 / Technical Competencies</span>
-            <h2 id="skills-title">Tech Stack &amp; Skill Set</h2>
+        <!-- ABOUT SECTION -->
+        <section id="about" aria-labelledby="about-title">
+          <div class="section-header reveal">
+            <span class="section-subtitle">MOD-05 / Profile</span>
+            <h2 id="about-title">Builder and breaker</h2>
           </div>
 
-          <div class="skills-category-grid">
-            <article class="skills-category-card">
-              <h3 class="skills-category-title">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="var(--accent-pink)"
-                  stroke-width="2"
-                >
-                  <polyline points="16 18 22 12 16 6"></polyline>
-                  <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
-                Core Backend &amp; .NET
-              </h3>
-              <div class="badge-group">
-                <span class="badge">C# 13</span>
-                <span class="badge badge-pink">.NET 10 / 9 / 8</span>
-                <span class="badge">ASP.NET Core</span>
-                <span class="badge">N-Tier Architecture</span>
-                <span class="badge">RESTful APIs</span>
-                <span class="badge">Stateless Web Architecture</span>
-                <span class="badge">JWT Auth</span>
-                <span class="badge">Async / Await</span>
+          <div class="grid-1-2">
+            <article class="card about-portrait-card reveal">
+              <img
+                class="about-portrait"
+                src="/images/official-portrait.png"
+                alt="Portrait of Joudi Mohammad"
+                width="260"
+                height="260"
+                loading="lazy"
+                decoding="async"
+              />
+              <h3 class="card-title about-name">Joudi Mohammad</h3>
+              <p class="about-role">Software &amp; Security Architect</p>
+              <p>
+                With a background in Cybersecurity (Dean's List at Abu Dhabi
+                University) and hands-on penetration testing experience, I build
+                backend systems from a dual perspective: maximum runtime
+                efficiency and total security immunity.
+              </p>
+              <div class="badge-group" style="justify-content: center">
+                <span class="badge"><span class="status-dot"></span>Available in Abu Dhabi, UAE</span>
+                <span class="badge badge-pink">Immediate Onboarding</span>
               </div>
             </article>
 
-            <article class="skills-category-card">
-              <h3 class="skills-category-title">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="var(--accent-pink)"
-                  stroke-width="2"
-                >
-                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                  <path d="M21 19c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                </svg>
-                Database &amp; Storage
+            <article class="card reveal">
+              <h3 class="card-title" style="margin-bottom: 1.5rem">
+                Architectural Mindset
               </h3>
-              <div class="badge-group">
-                <span class="badge badge-pink">Advanced T-SQL</span>
-                <span class="badge">Oracle PL/SQL</span>
-                <span class="badge">MS SQL Server 2022</span>
-                <span class="badge">PostgreSQL</span>
-                <span class="badge">MySQL</span>
-                <span class="badge">High-Perf ADO.NET</span>
-                <span class="badge">SqlTransactions</span>
-                <span class="badge">Row-Level Isolation</span>
-                <span class="badge">Stored Procedures</span>
-              </div>
-            </article>
-
-            <article class="skills-category-card">
-              <h3 class="skills-category-title">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="var(--accent-pink)"
-                  stroke-width="2"
-                >
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
-                Offensive Security &amp; Testing
-              </h3>
-              <div class="badge-group">
-                <span class="badge badge-pink">API Penetration Testing</span>
-                <span class="badge">OWASP Top 10</span>
-                <span class="badge">IDOR Mitigations</span>
-                <span class="badge">Source Code Auditing</span>
-                <span class="badge">Broken Access Control</span>
-                <span class="badge">Python Exploit Automation</span>
-              </div>
-            </article>
-
-            <article class="skills-category-card">
-              <h3 class="skills-category-title">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="var(--accent-pink)"
-                  stroke-width="2"
-                >
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                  <line x1="8" y1="21" x2="16" y2="21"></line>
-                  <line x1="12" y1="17" x2="12" y2="21"></line>
-                </svg>
-                Tools &amp; Engineering
-              </h3>
-              <div class="badge-group">
-                <span class="badge">PBKDF2 / SHA256</span>
-                <span class="badge">Database Meta-Programming</span>
-                <span class="badge">CLI Automation Engine</span>
-                <span class="badge">Trace IDs Telemetry</span>
-                <span class="badge">CORS Security</span>
-                <span class="badge">Git / GitHub</span>
-              </div>
+              <ul class="mindset-list">
+                <li>
+                  <span class="service-icon"><i data-lucide="database"></i></span>
+                  <span>
+                    <strong>Bare-Metal ADO.NET Performance</strong>
+                    I eliminate implicit data type conversions and plan
+                    recompilations by implementing strictly typed ADO.NET
+                    parameters over heavy ORM overhead.
+                  </span>
+                </li>
+                <li>
+                  <span class="service-icon"><i data-lucide="lock"></i></span>
+                  <span>
+                    <strong>Zero-Trust API Security</strong>
+                    I audit API routes for OWASP Top 10 vulnerabilities (IDOR,
+                    Broken Access Control, Excessive Data Exposure) and build
+                    cryptographic defenses (PBKDF2/SHA256, Refresh Token
+                    Rotation).
+                  </span>
+                </li>
+                <li>
+                  <span class="service-icon"><i data-lucide="layers"></i></span>
+                  <span>
+                    <strong>Row-Level Tenant Isolation</strong>
+                    Architecting database schemas with CompanyID tracking tokens
+                    to guarantee multi-tenant data boundary isolation at the
+                    database layer.
+                  </span>
+                </li>
+              </ul>
             </article>
           </div>
         </section>
 
         <!-- CAREER & EXPERIENCE SECTION -->
         <section id="experience" aria-labelledby="experience-title">
-          <div class="section-header">
-            <span class="section-subtitle">06 / Experience Timeline</span>
-            <h2 id="experience-title">Professional Experience</h2>
+          <div class="section-header reveal">
+            <span class="section-subtitle">MOD-06 / Experience</span>
+            <h2 id="experience-title">Professional experience</h2>
           </div>
 
           <div class="timeline">
-            <div class="timeline-item">
+            <div class="timeline-item reveal">
               <div class="timeline-marker"></div>
               <article class="timeline-card">
                 <div class="timeline-header">
                   <div>
-                    <h3 class="timeline-role">Freelance Penetration Tester</h3>
+                    <h3 class="timeline-role">Independent Security Researcher</h3>
                     <p class="timeline-company">IT Legend (Remote - Egypt)</p>
                   </div>
                   <span class="timeline-date">Oct 2025 &ndash; May 2026</span>
@@ -1549,181 +899,127 @@
           </div>
         </section>
 
+        <!-- SKILLS & TECH STACK SECTION -->
+        <section id="skills" aria-labelledby="skills-title">
+          <div class="section-header reveal">
+            <span class="section-subtitle">MOD-07 / Stack</span>
+            <h2 id="skills-title">Tech stack &amp; skills</h2>
+          </div>
+
+          <div class="skills-category-grid">
+            <article class="skills-category-card reveal">
+              <h3 class="skills-category-title"><i data-lucide="code"></i>Core Backend &amp; .NET</h3>
+              <div class="badge-group">
+                <span class="badge">C# 13</span>
+                <span class="badge badge-pink">.NET 10 / 9 / 8</span>
+                <span class="badge">ASP.NET Core</span>
+                <span class="badge">N-Tier Architecture</span>
+                <span class="badge">RESTful APIs</span>
+                <span class="badge">Stateless Web Architecture</span>
+                <span class="badge">JWT Auth</span>
+                <span class="badge">Async / Await</span>
+              </div>
+            </article>
+
+            <article class="skills-category-card reveal">
+              <h3 class="skills-category-title"><i data-lucide="database"></i>Database &amp; Storage</h3>
+              <div class="badge-group">
+                <span class="badge badge-pink">Advanced T-SQL</span>
+                <span class="badge">Oracle PL/SQL</span>
+                <span class="badge">MS SQL Server 2022</span>
+                <span class="badge">PostgreSQL</span>
+                <span class="badge">MySQL</span>
+                <span class="badge">High-Perf ADO.NET</span>
+                <span class="badge">SqlTransactions</span>
+                <span class="badge">Row-Level Isolation</span>
+                <span class="badge">Stored Procedures</span>
+              </div>
+            </article>
+
+            <article class="skills-category-card reveal">
+              <h3 class="skills-category-title"><i data-lucide="shield-check"></i>Offensive Security &amp; Testing</h3>
+              <div class="badge-group">
+                <span class="badge badge-pink">API Penetration Testing</span>
+                <span class="badge">OWASP Top 10</span>
+                <span class="badge">IDOR Mitigations</span>
+                <span class="badge">Source Code Auditing</span>
+                <span class="badge">Broken Access Control</span>
+                <span class="badge">Python Exploit Automation</span>
+              </div>
+            </article>
+
+            <article class="skills-category-card reveal">
+              <h3 class="skills-category-title"><i data-lucide="wrench"></i>Tools &amp; Engineering</h3>
+              <div class="badge-group">
+                <span class="badge">PBKDF2 / SHA256</span>
+                <span class="badge">Database Meta-Programming</span>
+                <span class="badge">CLI Automation Engine</span>
+                <span class="badge">Trace IDs Telemetry</span>
+                <span class="badge">CORS Security</span>
+                <span class="badge">Git / GitHub</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
         <!-- EDUCATION & CREDENTIALS SECTION -->
         <section id="education" aria-labelledby="education-title">
-          <div class="section-header">
-            <span class="section-subtitle"
-              >07 / Education &amp; Credentials</span
-            >
-            <h2 id="education-title">
-              Education, Certifications &amp; Languages
-            </h2>
+          <div class="section-header reveal">
+            <span class="section-subtitle">MOD-08 / Credentials</span>
+            <h2 id="education-title">Education &amp; eligibility</h2>
           </div>
 
           <div class="grid-2">
-            <article class="card">
-              <h3 class="card-title" style="margin-bottom: 0.5rem">
-                Academic Education
-              </h3>
-              <p
-                style="
-                  color: var(--accent-pink);
-                  font-family: var(--font-mono);
-                  font-size: 0.9rem;
-                  margin-bottom: 0.75rem;
-                "
-              >
-                B.Sc. in Cybersecurity (In Progress)
-              </p>
-              <p style="font-size: 0.925rem; margin-bottom: 0.5rem">
-                <strong>Abu Dhabi University</strong> &bull; Abu Dhabi, UAE
-              </p>
-              <div class="badge-group" style="margin-top: 0.5rem">
-                <span class="badge badge-emerald">Dean's List</span>
+            <article class="card reveal">
+              <h3 class="card-title"><i data-lucide="graduation-cap"></i> Academic Education</h3>
+              <p class="card-kicker">B.Sc. in Cybersecurity (In Progress)</p>
+              <p><strong>Abu Dhabi University</strong> &bull; Abu Dhabi, UAE</p>
+              <div class="badge-group">
+                <span class="badge badge-pink">Dean's List</span>
                 <span class="badge">GPA: 3.4 / 4.0</span>
               </div>
             </article>
 
-            <article class="card">
-              <h3 class="card-title" style="margin-bottom: 0.5rem">
-                Software Engineering Training
-              </h3>
-              <p
-                style="
-                  color: var(--accent-pink);
-                  font-family: var(--font-mono);
-                  font-size: 0.9rem;
-                  margin-bottom: 0.75rem;
-                "
-              >
-                Advanced Software Engineering Track
-              </p>
-              <p style="font-size: 0.925rem; margin-bottom: 0.5rem">
-                <strong>Programming Advices Academy</strong>
-              </p>
-              <div class="badge-group" style="margin-top: 0.5rem">
+            <article class="card reveal">
+              <h3 class="card-title"><i data-lucide="file-code"></i> Software Engineering Training</h3>
+              <p class="card-kicker">Advanced Software Engineering Track</p>
+              <p><strong>Programming Advices Academy</strong></p>
+              <div class="badge-group">
                 <span class="badge">N-Tier Architecture</span>
                 <span class="badge">T-SQL Optimization</span>
                 <span class="badge">C# .NET Core</span>
               </div>
             </article>
-          </div>
 
-          <div class="grid-2" style="margin-top: 1.25rem">
-            <article class="card">
-              <h3 class="card-title" style="margin-bottom: 0.75rem">
-                Languages
-              </h3>
-              <ul
-                style="
-                  list-style: none;
-                  padding-left: 0;
-                  display: flex;
-                  flex-direction: column;
-                  gap: 0.4rem;
-                "
-              >
-                <li
-                  style="
-                    display: flex;
-                    justify-content: space-between;
-                    font-size: 0.925rem;
-                  "
-                >
-                  <span>Arabic</span>
-                  <span
-                    style="
-                      color: var(--accent-pink);
-                      font-family: var(--font-mono);
-                    "
-                    >Native</span
-                  >
-                </li>
-                <li
-                  style="
-                    display: flex;
-                    justify-content: space-between;
-                    font-size: 0.925rem;
-                  "
-                >
-                  <span>Kurdish</span>
-                  <span
-                    style="
-                      color: var(--accent-pink);
-                      font-family: var(--font-mono);
-                    "
-                    >Native</span
-                  >
-                </li>
-                <li
-                  style="
-                    display: flex;
-                    justify-content: space-between;
-                    font-size: 0.925rem;
-                  "
-                >
-                  <span>English</span>
-                  <span
-                    style="
-                      color: var(--text-muted);
-                      font-family: var(--font-mono);
-                    "
-                    >Professional B2</span
-                  >
-                </li>
+            <article class="card reveal">
+              <h3 class="card-title" style="margin-bottom: 1rem"><i data-lucide="languages"></i> Languages</h3>
+              <ul class="key-value-list">
+                <li><span>Arabic</span><span>Native</span></li>
+                <li><span>Kurdish</span><span>Native</span></li>
+                <li><span>English</span><span>Professional B2</span></li>
               </ul>
             </article>
 
-            <article class="card">
-              <h3 class="card-title" style="margin-bottom: 0.75rem">
-                Visa &amp; Work Eligibility
-              </h3>
-              <p style="font-size: 0.925rem; margin-bottom: 0.75rem">
+            <article class="card reveal">
+              <h3 class="card-title"><i data-lucide="badge-check"></i> Visa &amp; Work Eligibility</h3>
+              <p style="margin-top: 0.75rem">
                 <strong>Golden Visa Holder</strong> in the United Arab Emirates.
                 Fully eligible for immediate onboarding with no visa sponsorship
                 delays required.
               </p>
-              <span class="badge badge-pink"
-                >Available for Remote / On-Site in UAE</span
-              >
+              <div class="badge-group">
+                <span class="badge badge-pink">Available for Remote / On-Site in UAE</span>
+              </div>
             </article>
           </div>
         </section>
 
-        <!-- RECOMMENDATIONS SECTION -->
-        <section id="recommendations" aria-labelledby="recommendations-title">
-          <div class="section-header">
-            <span class="section-subtitle">08 / Client Endorsements</span>
-            <h2 id="recommendations-title">Professional Recommendations</h2>
-          </div>
-
-          <article class="quote-card">
-            <blockquote class="quote-text">
-              &ldquo;I had the pleasure of working with Joudi, who conducted a
-              security review of my website and identified several important
-              vulnerabilities. What stood out the most was his honesty and
-              integrity &mdash; he was transparent, clear, and focused on
-              delivering real value... His attention to detail and ability to
-              uncover meaningful issues were truly impressive. I highly
-              recommend him to anyone looking for a reliable and skilled
-              security professional.&rdquo;
-            </blockquote>
-
-            <footer style="margin-top: 1rem">
-              <div class="quote-author-name">Ali Shahin</div>
-              <div class="quote-author-role">
-                CEO at IT Legend (via LinkedIn Endorsement)
-              </div>
-            </footer>
-          </article>
-        </section>
-
         <!-- CONTACT SECTION -->
         <section id="contact" aria-labelledby="contact-title">
-          <div class="section-header">
-            <span class="section-subtitle">09 / Direct Communication</span>
-            <h2 id="contact-title">Get In Touch</h2>
-            <p style="color: var(--text-secondary); max-width: 600px">
+          <div class="section-header reveal">
+            <span class="section-subtitle">MOD-09 / Contact</span>
+            <h2 id="contact-title">Let&rsquo;s build something secure</h2>
+            <p class="section-lead">
               Have a C# .NET architecture project, a database performance
               challenge, or need an API security assessment? Send a message
               directly.
@@ -1731,358 +1027,154 @@
           </div>
 
           <div class="contact-grid">
-            <div class="contact-info">
+            <div class="contact-info reveal">
               <div class="contact-item">
-                <div class="contact-icon">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                    ></path>
-                    <polyline points="22,6 12,13 2,6"></polyline>
-                  </svg>
-                </div>
+                <div class="contact-icon"><i data-lucide="mail"></i></div>
                 <div class="contact-details">
-                  <h3>Direct Email</h3>
-                  <p>joudi.adeeb@gmail.com</p>
-                  <button
-                    class="btn btn-outline btn-sm copy-email-btn"
-                    type="button"
-                    style="margin-top: 0.5rem"
-                  >
-                    Copy Email Address
+                  <h3>Email</h3>
+                  <p>
+                    <a href="mailto:joudi.adeeb@gmail.com">joudi.adeeb@gmail.com</a>
+                  </p>
+                  <button class="btn btn-outline btn-sm copy-email-btn" type="button" style="margin-top: 0.5rem">
+                    <i data-lucide="copy"></i><span>Copy email address</span>
                   </button>
                 </div>
               </div>
 
               <div class="contact-item">
-                <div class="contact-icon">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                    ></path>
-                  </svg>
-                </div>
+                <div class="contact-icon"><i data-lucide="phone"></i></div>
                 <div class="contact-details">
                   <h3>Phone &amp; WhatsApp</h3>
-                  <p>+971 554276817</p>
+                  <p><a href="https://wa.me/971554276817" target="_blank" rel="noopener noreferrer">+971 554276817</a></p>
                 </div>
               </div>
 
               <div class="contact-item">
-                <div class="contact-icon" style="color: var(--accent-upwork)">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="var(--accent-upwork)"
-                    stroke-width="2"
-                  >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M8 12h8"></path>
-                    <path d="M12 8v8"></path>
-                  </svg>
-                </div>
+                <div class="contact-icon"><i data-lucide="linkedin"></i></div>
                 <div class="contact-details">
-                  <h3>Upwork Direct Contract</h3>
+                  <h3>LinkedIn</h3>
                   <p>
-                    <a
-                      href="https://www.upwork.com/freelancers/~0110990d2c3ed41795?mp_source=share"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style="color: var(--accent-upwork); font-weight: 600"
-                      >upwork.com/freelancers/~0110990d2c3ed41795 ↗</a
-                    >
-                  </p>
-                  <span
-                    class="badge badge-emerald"
-                    style="margin-top: 0.35rem; display: inline-block"
-                    >Rising Talent Top 5% Upwork Freelancer</span
-                  >
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-                    ></path>
-                    <rect x="2" y="9" width="4" height="12"></rect>
-                    <circle cx="4" cy="4" r="2"></circle>
-                  </svg>
-                </div>
-                <div class="contact-details">
-                  <h3>LinkedIn Profile</h3>
-                  <p>
-                    <a
-                      href="https://linkedin.com/in/joudi-adeeb"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >linkedin.com/in/joudi-adeeb ↗</a
-                    >
+                    <a href="https://linkedin.com/in/joudi-adeeb" target="_blank" rel="noopener noreferrer">linkedin.com/in/joudi-adeeb</a>
                   </p>
                 </div>
               </div>
 
               <div class="contact-item">
-                <div class="contact-icon">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                    ></path>
-                  </svg>
-                </div>
+                <div class="contact-icon"><i data-lucide="github"></i></div>
                 <div class="contact-details">
-                  <h3>GitHub Repositories</h3>
+                  <h3>GitHub</h3>
                   <p>
-                    <a
-                      href="https://github.com/Joudi0"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >github.com/Joudi0 ↗</a
-                    >
+                    <a href="https://github.com/Joudi0" target="_blank" rel="noopener noreferrer">github.com/Joudi0</a>
                   </p>
                 </div>
               </div>
             </div>
 
-            <form
-              id="contact-form"
-              class="contact-form"
-              action="#"
-              method="POST"
-              aria-label="Contact Form"
-            >
+            <form id="contact-form" class="contact-form reveal" action="#" method="POST" aria-label="Contact form">
               <fieldset>
-                <legend>Sender Information</legend>
+                <legend>About you</legend>
 
                 <div class="form-group">
-                  <label for="sender-name"
-                    >Full Name
-                    <span style="color: var(--accent-pink)">*</span></label
-                  >
-                  <input
-                    type="text"
-                    id="sender-name"
-                    name="fullName"
-                    placeholder="e.g. Sarah Jenkins"
-                    required
-                  />
+                  <label for="sender-name">Full name <span class="required">*</span></label>
+                  <input type="text" id="sender-name" name="fullName" placeholder="e.g. Sarah Jenkins" autocomplete="name" required />
                 </div>
 
                 <div class="form-group">
-                  <label for="contact-method-select"
-                    >Preferred Contact Method
-                    <span style="color: var(--accent-pink)">*</span></label
-                  >
-                  <select
-                    id="contact-method-select"
-                    style="margin-bottom: 0.75rem"
-                  >
-                    <option value="whatsapp" selected>
-                      💬 WhatsApp / Mobile Phone
-                    </option>
-                    <option value="email">✉️ Email Address</option>
+                  <label for="contact-method-select">Preferred contact method <span class="required">*</span></label>
+                  <select id="contact-method-select">
+                    <option value="whatsapp" selected>WhatsApp / Mobile phone</option>
+                    <option value="email">Email address</option>
                   </select>
                 </div>
 
                 <div class="form-group">
-                  <label id="sender-contact-label" for="sender-email"
-                    >Phone Number / WhatsApp
-                    <span style="color: var(--accent-pink)">*</span></label
-                  >
-                  <div style="display: flex; gap: 0.5rem; align-items: center">
-                    <select
-                      id="sender-country-code"
-                      style="
-                        background: var(--bg-main);
-                        border: 1px solid var(--border-muted);
-                        color: var(--text-primary);
-                        padding: 0.65rem 0.5rem;
-                        border-radius: var(--radius-sm);
-                        font-family: var(--font-mono);
-                        font-size: 0.85rem;
-                        width: 135px;
-                      "
-                      aria-label="Country Dialing Code"
-                    >
-                      <option value="+971" selected>🇦🇪 +971 (UAE)</option>
-                      <option value="+966">🇸🇦 +966 (KSA)</option>
-                      <option value="+963">🇸🇾 +963 (Syria)</option>
-                      <option value="+962">🇯🇴 +962 (Jordan)</option>
-                      <option value="+20">🇪🇬 +20 (Egypt)</option>
-                      <option value="+974">🇶🇦 +974 (Qatar)</option>
-                      <option value="+965">🇰🇼 +965 (Kuwait)</option>
-                      <option value="+968">🇴🇲 +968 (Oman)</option>
-                      <option value="+973">🇧🇭 +973 (Bahrain)</option>
-                      <option value="+964">🇮🇶 +964 (Iraq)</option>
-                      <option value="+961">🇱🇧 +961 (Lebanon)</option>
-                      <option value="+1">🇺🇸 +1 (USA / Canada)</option>
-                      <option value="+44">🇬🇧 +44 (UK)</option>
+                  <label id="sender-contact-label" for="sender-email">Phone Number / WhatsApp <span style="color: var(--accent-pink);">*</span></label>
+                  <div class="phone-row">
+                    <select id="sender-country-code" aria-label="Country dialing code">
+                      <option value="+971" selected>+971 (UAE)</option>
+                      <option value="+966">+966 (KSA)</option>
+                      <option value="+963">+963 (Syria)</option>
+                      <option value="+962">+962 (Jordan)</option>
+                      <option value="+20">+20 (Egypt)</option>
+                      <option value="+974">+974 (Qatar)</option>
+                      <option value="+965">+965 (Kuwait)</option>
+                      <option value="+968">+968 (Oman)</option>
+                      <option value="+973">+973 (Bahrain)</option>
+                      <option value="+964">+964 (Iraq)</option>
+                      <option value="+961">+961 (Lebanon)</option>
+                      <option value="+1">+1 (USA / Canada)</option>
+                      <option value="+44">+44 (UK)</option>
                     </select>
-                    <input
-                      type="text"
-                      id="sender-email"
-                      name="email"
-                      placeholder="e.g. 0554276817 or 0501234567"
-                      required
-                      style="flex: 1"
-                    />
+                    <input type="text" id="sender-email" name="email" placeholder="e.g. 0554276817 or 0501234567" required />
                   </div>
-                  <span
-                    id="sender-contact-hint"
-                    style="
-                      font-size: 0.75rem;
-                      color: var(--text-muted);
-                      margin-top: 0.35rem;
-                      display: block;
-                    "
-                  >
-                    💡 Local numbers starting with 0 (e.g. 055..., 050...) will
-                    automatically convert to international format with UAE
-                    (+971) country code.
+                  <span id="sender-contact-hint" class="form-hint">
+                    Local numbers starting with 0 (e.g. 055..., 050...) are
+                    converted to international format with the selected country
+                    code.
                   </span>
                 </div>
               </fieldset>
 
               <fieldset>
-                <legend>Project Overview</legend>
+                <legend>Your project</legend>
 
                 <div class="form-group">
-                  <label for="inquiry-type">Inquiry Service Category</label>
+                  <label for="inquiry-type">What do you need?</label>
                   <select id="inquiry-type" name="inquiryType">
-                    <option value="Backend Engineering">
-                      C# .NET Backend Architecture
-                    </option>
-                    <option value="Security Audit">
-                      API Penetration Testing &amp; Security Audit
-                    </option>
-                    <option value="Database Tuning">
-                      SQL Database Design &amp; Performance Tuning
-                    </option>
-                    <option value="Consulting / Onboarding">
-                      Immediate Hiring / Consulting Offer
-                    </option>
+                    <option value="Backend Engineering">C# .NET Backend Architecture</option>
+                    <option value="Security Audit">API Penetration Testing &amp; Security Audit</option>
+                    <option value="Database Tuning">SQL Database Design &amp; Performance Tuning</option>
+                    <option value="Consulting / Onboarding">Hiring / Consulting Offer</option>
                   </select>
                 </div>
 
                 <div class="form-group">
-                  <label for="sender-message"
-                    >Message / Scope
-                    <span style="color: var(--accent-pink)">*</span></label
-                  >
-                  <textarea
-                    id="sender-message"
-                    name="message"
-                    placeholder="Describe your architectural requirements or security audit scope..."
-                    required
-                  ></textarea>
+                  <label for="sender-message">Message <span class="required">*</span></label>
+                  <textarea id="sender-message" name="message" placeholder="Tell me what you're building or what you need audited..." required></textarea>
                 </div>
               </fieldset>
 
-              <button type="submit" class="btn btn-pink" style="width: 100%">
-                <span>Send Message</span>
+              <button type="submit" class="btn btn-pink btn-block">
+                <i data-lucide="send"></i><span>Send message</span>
               </button>
 
-              <div
-                id="form-status"
-                class="form-status"
-                style="margin-top: 1rem"
-              ></div>
+              <div id="form-status" class="form-status" style="margin-top: 1rem" role="status" aria-live="polite"></div>
               <p class="form-notice">
-                // Encrypted transmission pipeline. Ready for ASP.NET Core POST
-                /api/v1/contact hook.
+                // Opens WhatsApp or your email app with the message pre-filled.
               </p>
             </form>
           </div>
         </section>
 
         <!-- Site Footer -->
-        <footer class="site-footer" role="contentinfo">
+        <footer class="site-footer">
           <div class="footer-inner">
             <div>
               <p style="margin: 0; color: var(--text-secondary)">
                 &copy; 2026 <strong>Joudi Mohammad</strong>. Engineered with
                 Vanilla HTML5, CSS3 &amp; TypeScript.
               </p>
-              <p
-                style="
-                  margin-top: 0.25rem;
-                  font-family: var(--font-mono);
-                  font-size: 0.8rem;
-                "
-              >
-                Golden Visa Holder &bull; Abu Dhabi, UAE
-              </p>
+              <p class="footer-meta">Golden Visa Holder &bull; Abu Dhabi, UAE</p>
             </div>
 
             <ul class="footer-links">
-              <li>
-                <a
-                  href="https://github.com/Joudi0"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >GitHub</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://linkedin.com/in/joudi-adeeb"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >LinkedIn</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://Joudi-DVLD.runasp.net/Scalar/v1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Live API Docs</a
-                >
-              </li>
+              <li><a href="https://github.com/Joudi0" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              <li><a href="https://linkedin.com/in/joudi-adeeb" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="https://joudi-dvld.runasp.net/Scalar/v1" target="_blank" rel="noopener noreferrer">Live API Docs</a></li>
             </ul>
           </div>
         </footer>
       </main>
     </div>
 
-    <!-- Interactive Modal Drawer for Project Architectural Deep-Dives -->
+    <!-- Shared modal for project deep-dives, booking & service requests -->
     <div
       id="project-modal"
       class="modal-backdrop"
       role="dialog"
       aria-modal="true"
       aria-hidden="true"
+      aria-label="Details"
     >
       <div id="modal-window" class="modal-window">
         <!-- Dynamic Content Mounted by src/main.ts -->
