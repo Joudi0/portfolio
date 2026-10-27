@@ -14,8 +14,6 @@ export interface ProjectDetails {
   repoUrl?: string;
   repoUrlLabel?: string;
   desktopRepoUrl?: string;
-  upworkUrl?: string;
-  desktopUpworkUrl?: string;
   isPrivate?: boolean;
   solutionStructure?: string;
   classArchitecture?: string[];

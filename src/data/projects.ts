@@ -32,7 +32,7 @@ public async Task<IEnumerable<AmenityBookingDto>> GetBookingsAsync()
     moreBy: [
       { id: "dvld", title: "DVLD: Enterprise Full-Stack Web Platform (.NET 10 & React)" },
       { id: "reshko", title: "ReshkoEngine v1.0.0 — Autonomous .NET 10 Architecture & Code Compiler" },
-      { id: "dvld-desktop", title: "Full DVLD Desktop" }
+      { id: "crm", title: "Multi-Tenant Real Estate CRM" }
     ],
     securityNote:
       "Zero-trust ownership rules, JWT TenantID claims, rate limiting, and audit logging protect multi-tenant residential operations.",
@@ -82,15 +82,14 @@ public async Task<IActionResult> GetDriverLicenses(int driverId, [FromHeader(Nam
     liveUrl: "https://dvld.joudi.dev",
     liveUrlLabel: "Live Demo ↗",
     repoUrl: "https://github.com/Joudi0/DVLD-Full-Backend",
-    repoUrlLabel: "Backend GitHub Repo ↗",
-    upworkUrl: "https://www.upwork.com/freelancers/~0110990d2c3ed41795?p=2075387221929848832"
+    repoUrlLabel: "Backend GitHub Repo ↗"
   },
   reshko: {
     title: "ReshkoEngine v1.0.0 — Autonomous .NET 10 Architecture & Code Compiler",
     subtitle: "Lead Software Architect & Inventor · C# 13 / .NET 10 · 12,000+ Lines",
     role: "Lead Software Architect & Inventor",
     architecture:
-      "ReshkoEngine is a proprietary 12,000+ line C# compilation engine that transforms DB schemas into production-ready ASP.NET Core Clean Architecture backends in seconds. Emits C# WebAPI, TS clients, and Docker CI/CD pipelines.",
+      "A custom .NET 10 architecture compiler that generates enterprise-grade backends in seconds. ReshkoEngine is a proprietary 12,000+ line C# compilation engine that transforms DB schemas into production-ready ASP.NET Core Clean Architecture backends in seconds. Emits C# WebAPI, TS clients, and Docker CI/CD pipelines.",
     codeSnippet: `// ReshkoEngine Multi-Database Generator Factory Pattern (Strategy Pattern Dispatcher)
 public class DatabaseGeneratorFactory
 {
@@ -123,18 +122,18 @@ public class DatabaseGeneratorFactory
     moreBy: [
       { id: "facilityflux", title: "FacilityFlux" },
       { id: "dvld", title: "DVLD" },
-      { id: "dvld-desktop", title: "Full DVLD Desktop" }
+      { id: "crm", title: "Multi-Tenant Real Estate CRM" }
     ],
     dbSupport: [
-      "🟢 MS SQL Server (SqlConnection, T-SQL Stored Procs, SCOPE_IDENTITY())",
-      "🟡 MySQL (MySqlConnection, MySQL Stored Procs, LAST_INSERT_ID())",
-      "🔵 PostgreSQL (NpgsqlConnection, PL/pgSQL Functions, RETURNING)",
-      "🟠 Oracle & EF Core compilation targets"
+      "MS SQL Server (SqlConnection, T-SQL Stored Procs, SCOPE_IDENTITY())",
+      "MySQL (MySqlConnection, MySQL Stored Procs, LAST_INSERT_ID())",
+      "PostgreSQL (NpgsqlConnection, PL/pgSQL Functions, RETURNING)",
+      "Oracle & EF Core compilation targets"
     ],
     designPatterns: [
-      "🎯 Strategy Pattern: Dynamic multi-database query provider execution (IDatabaseGenerator)",
-      "🏭 Factory Pattern: DatabaseGeneratorFactory creating concrete DB providers dynamically",
-      "🏛️ Facade Pattern: Unified, simplified orchestration interface for full solution scaffolding"
+      "Strategy Pattern: Dynamic multi-database query provider execution (IDatabaseGenerator)",
+      "Factory Pattern: DatabaseGeneratorFactory creating concrete DB providers dynamically",
+      "Facade Pattern: Unified, simplified orchestration interface for full solution scaffolding"
     ],
     classArchitecture: [
       "Program.cs (Spectre.Console CLI Entry Point)",
@@ -149,14 +148,13 @@ public class DatabaseGeneratorFactory
     solutionStructure: `MySolution/
 ├── MySolution.slnx                   # Modern .NET 10 Solution File
 │
-├── 📦 DAL (Data Access Layer)          # Connection strings, ADO.NET async DB operations
-├── 📦 BLL (Business Logic Layer)       # Business logic, DTO mappings, hashing & FK composition
-├── 📦 Shared (Core Contracts & DTOs)   # Brief/Full DTOs, TenantContext, PBKDF2 Helper, enRoles
-└── 🌐 WebAPI (Presentation Layer)      # Controllers, JWT TokenService, TenantMiddleware, Policies`,
+├── DAL (Data Access Layer)          # Connection strings, ADO.NET async DB operations
+├── BLL (Business Logic Layer)       # Business logic, DTO mappings, hashing & FK composition
+├── Shared (Core Contracts & DTOs)   # Brief/Full DTOs, TenantContext, PBKDF2 Helper, enRoles
+└── WebAPI (Presentation Layer)      # Controllers, JWT TokenService, TenantMiddleware, Policies`,
     securityNote:
       "Mitigates SQL Injection via Parameterized Stored Procedures and Zero-Trust input typing. Built-in CWE-208 timing attack defense, anti-tampering DTOs & token rotation. Created and owned exclusively by Joudi Adeeb. Private, Proprietary, and Confidential IP.",
-    isPrivate: true,
-    upworkUrl: "https://www.upwork.com/freelancers/~0110990d2c3ed41795?p=2076384185198800896"
+    isPrivate: true
   },
   "dvld-desktop": {
     title: "Full DVLD Desktop",
@@ -198,13 +196,12 @@ public async Task<DataTable> LoadApplicationsAsync(string searchTerm, int page, 
     securityNote:
       "Parameterized stored procedures and layered WinForms access patterns protect licensing data on the desktop client.",
     repoUrl: "https://github.com/Joudi0/DVLD-Project",
-    repoUrlLabel: "GitHub Repo ↗",
-    upworkUrl: "https://www.upwork.com/freelancers/~0110990d2c3ed41795?p=2075388666670444544"
+    repoUrlLabel: "GitHub Repo ↗"
   },
   crm: {
-    title: "Enterprise Multi-Tenant CRM Schema Design",
-    subtitle: "Relational Database Design & Advanced Row-Level Security",
-    architecture: "25+ Tables Relational Schema with Row-Level Tenant Isolation",
+    title: "Multi-Tenant Real Estate CRM",
+    subtitle: "B2B Property Management · Row-Level Security & Automated Workflows",
+    architecture: "A high-performance B2B property management system with strict row-level security and automated workflows, backed by a 25+ table relational schema with row-level tenant isolation.",
     codeSnippet: `-- Row-Level Isolation Token Implementation via SQL Views & Triggers
 CREATE VIEW dbo.vw_TenantTransactions AS
 SELECT 

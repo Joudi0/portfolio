@@ -1,5 +1,6 @@
 import { PROJECTS_DATA } from '../data/projects';
 import { escapeHtml } from '../utils/toast';
+import { renderIcons } from '../utils/icons';
 
 export function openProjectModal(projectId: string): void {
   const project = PROJECTS_DATA[projectId];
@@ -24,7 +25,7 @@ export function openProjectModal(projectId: string): void {
       ${project.isPrivate ? '<span class="badge" style="margin-left: 0.5rem; background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3);">Proprietary / Closed Source</span>' : ''}
     </div>
     <h3 style="font-size: 1.5rem; margin-bottom: 0.25rem;">${escapeHtml(project.title)}</h3>
-    <p style="color: var(--accent-emerald); font-family: var(--font-mono); font-size: 0.875rem; margin-bottom: 0.5rem;">
+    <p style="color: var(--accent-pink); font-family: var(--font-mono); font-size: 0.875rem; margin-bottom: 0.5rem;">
       ${escapeHtml(project.subtitle)}
     </p>
     ${project.role || project.published ? `
@@ -64,7 +65,7 @@ export function openProjectModal(projectId: string): void {
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.4rem;">
           ${project.classArchitecture.map(cls => `
             <div style="background: var(--bg-tertiary); padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-secondary);">
-              ⚙️ ${escapeHtml(cls)}
+              <i data-lucide="cpu"></i> ${escapeHtml(cls)}
             </div>
           `).join('')}
         </div>
@@ -112,8 +113,8 @@ export function openProjectModal(projectId: string): void {
       </div>
     ` : ''}
     
-    <div style="background-color: var(--accent-emerald-glow); border: 1px solid var(--accent-emerald-border); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
-      <strong style="color: var(--accent-emerald); font-size: 0.875rem; display: block; margin-bottom: 0.25rem;">🛡️ Security Audit Guarantee:</strong>
+    <div style="background-color: var(--accent-pink-glow); border: 1px solid var(--accent-pink-border); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+      <strong style="color: var(--accent-pink); font-size: 0.875rem; display: block; margin-bottom: 0.25rem;"><i data-lucide="shield-check"></i> Security Audit Guarantee:</strong>
       <span style="font-size: 0.875rem; color: var(--text-secondary);">${escapeHtml(project.securityNote)}</span>
     </div>
     
@@ -121,12 +122,11 @@ export function openProjectModal(projectId: string): void {
       ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">${escapeHtml(liveLabel)}</a>` : ''}
       ${project.repoUrl ? `<a href="${project.repoUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">${escapeHtml(repoLabel)}</a>` : ''}
       ${project.desktopRepoUrl ? `<a href="${project.desktopRepoUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Desktop WinForms Repo ↗</a>` : ''}
-      ${project.upworkUrl ? `<a href="${project.upworkUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="border-color: #14a800; color: #14a800;">Upwork Project Case Study ↗</a>` : ''}
-      ${project.desktopUpworkUrl ? `<a href="${project.desktopUpworkUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="border-color: #14a800; color: #14a800;">Desktop Upwork Case Study ↗</a>` : ''}
       <button class="btn btn-secondary btn-sm" id="modal-close-window-btn">Close Window</button>
     </div>
   `;
   
+  renderIcons(windowEl);
   backdrop.classList.add('active');
   
   document.getElementById('modal-close-btn')?.addEventListener('click', () => {
